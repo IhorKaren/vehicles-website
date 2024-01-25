@@ -1,53 +1,18 @@
 module.exports = {
   root: true,
-  env: { browser: true, es2021: true },
+  env: { browser: true, es2020: true },
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-    "prettier",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
-  parserOptions: {
-    ecmaFeatures: { jsx: true },
-    ecmaVersion: "latest",
-    sourceType: "module",
-  },
-  settings: { react: { version: "detect" } },
-  plugins: ["react", "react-refresh", "prettier", "simple-import-sort"],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react-refresh'],
   rules: {
-    "react-refresh/only-export-components": [
-      "warn",
+    'react-refresh/only-export-components': [
+      'warn',
       { allowConstantExport: true },
     ],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "prettier/prettier": ["warn", { endOfLine: "auto" }],
   },
-  overrides: [
-    {
-      files: ["*.js", "*.jsx", "*.ts", "*.tsx"],
-      rules: {
-        "simple-import-sort/imports": [
-          "error",
-          {
-            groups: [
-              // Packages `react` related packages come first.
-              ["react", "react(.*)"],
-              ["@mui/(.*)"],
-              // Side effect imports.
-              ["^\\u0000", "^"],
-              // Packages starter with "@" or "@components" or "./"
-              ["^(@.*)(/.*|$)", "^\\."],
-              // svg files
-              ["^.+\\.?(svg|jpg|png|jpeg|gif|webp)$"],
-              // Style imports.
-              ["^.+\\.?(css|scss)$"],
-            ],
-          },
-        ],
-      },
-    },
-  ],
-};
+}
