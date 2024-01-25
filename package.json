@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://aleksayshn.github.io/tmpl-rct-vt/",
+  "homepage": "https://ihorkaren.github.io/vehicles-website/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
