@@ -1,0 +1,73 @@
+#root {
+  min-height: 100%;
+  overflow: clip;
+
+  display: flex;
+  flex-direction: column;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 20rem;
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #e4dcdc;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #ff7622;
+  }
+}
+
+ul,
+ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* Links */
+a {
+  color: inherit;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+.boldCell {
+  font-weight: bold;
+}
