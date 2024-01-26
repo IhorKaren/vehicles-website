@@ -51,8 +51,7 @@ const Footer = () => {
     <Container
       component="footer"
       sx={{
-        minWidth: "100vw",
-        maxWidth: "100%",
+        width: "100%",
         borderTop: (theme) => `1px solid ${theme.palette.divider}`,
         mt: 8,
         py: [3, 6],
