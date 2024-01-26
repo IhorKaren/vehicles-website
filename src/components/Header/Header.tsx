@@ -52,7 +52,7 @@ const Header = () => {
         </nav>
         <Button
           component={NavLink}
-          to="/auth/login"
+          to="/auth/SignIn"
           variant="outlined"
           sx={{ my: 1, mx: 1.5 }}
         >
@@ -60,7 +60,7 @@ const Header = () => {
         </Button>
         <Button
           component={NavLink}
-          to="/auth/register"
+          to="/auth/SignUp"
           variant="outlined"
           sx={{ my: 1, mx: 1.5 }}
         >
