@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import { Suspense } from "react";
+import { useEffect, Suspense } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
 import Login from "./pages/Login/Login";
@@ -7,6 +8,15 @@ import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      navigate(`/home`);
+    }
+  });
+
   return (
     <Suspense fallback={null}>
       <Routes>
