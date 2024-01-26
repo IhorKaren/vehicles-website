@@ -52,13 +52,13 @@ const Footer = () => {
       component="footer"
       sx={{
         minWidth: "100vw",
-        maxWidth: '100%',
+        maxWidth: "100%",
         borderTop: (theme) => `1px solid ${theme.palette.divider}`,
         mt: 8,
         py: [3, 6],
       }}
     >
-      <Grid container spacing={4} justifyContent="space-evenly">
+      <Grid component="nav" container spacing={4} justifyContent="space-evenly">
         {footers.map((footer) => (
           <Grid item xs={6} sm={3} key={footer.title}>
             <Typography variant="h6" color="text.primary" gutterBottom>
