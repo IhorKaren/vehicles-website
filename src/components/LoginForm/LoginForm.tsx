@@ -10,7 +10,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
-const SignIn = () => {
+const LoginForm = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -34,7 +34,7 @@ const SignIn = () => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Login
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
@@ -66,12 +66,12 @@ const SignIn = () => {
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            Sign In
+            Login
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link component={NavLink} to="SignUp" variant="body2">
-                Not registered yet? Sign up
+              <Link component={NavLink} to="register" variant="body2">
+                Not registered yet? Register
               </Link>
             </Grid>
           </Grid>
@@ -81,4 +81,4 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+export default LoginForm;
