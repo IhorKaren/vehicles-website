@@ -1,62 +1,88 @@
-import * as React from "react";
 import { NavLink } from "react-router-dom";
-import Avatar from "@mui/material/Avatar";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+import { useForm, SubmitHandler } from "react-hook-form";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 
+type FormValues = {
+  email: string;
+  password: string;
+};
+
+const schema = Yup.object().shape({
+  email: Yup.string().required("Email is required!"),
+  password: Yup.string().required("Password is required!"),
+});
+
 const LoginForm = () => {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    const user = {
+      ...data,
+    };
+
+    console.log(user);
+
+    reset();
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container maxWidth="xs">
       <Box
         sx={{
           marginTop: 8,
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "start",
+          backgroundColor: "#F5F7FF",
+          padding: "14px",
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-          <LockOutlinedIcon />
-        </Avatar>
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+        <Box component="form" onSubmit={handleSubmit(onSubmit)} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                required
-                fullWidth
+                type="email"
                 id="email"
+                {...register("email")}
+                error={Boolean(errors.email)}
+                helperText={errors.email?.message}
+                fullWidth
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                variant="filled"
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                required
+                type="password"
+                id="password"
+                {...register("password")}
+                error={Boolean(errors.password)}
+                helperText={errors.password?.message}
                 fullWidth
                 name="password"
                 label="Password"
-                type="password"
-                id="password"
                 autoComplete="new-password"
+                variant="filled"
               />
             </Grid>
           </Grid>
@@ -70,7 +96,7 @@ const LoginForm = () => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link component={NavLink} to="register" variant="body2">
+              <Link component={NavLink} to="/auth/register" variant="body2">
                 Not registered yet? Register
               </Link>
             </Grid>
