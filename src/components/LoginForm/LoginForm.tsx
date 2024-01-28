@@ -9,6 +9,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import { route } from "../../constants/route";
 
 type FormValues = {
   email: string;
@@ -96,7 +97,7 @@ const LoginForm = () => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link component={NavLink} to="/auth/register" variant="body2">
+              <Link component={NavLink} to={route.SIGN_UP} variant="body2">
                 Not registered yet? Register
               </Link>
             </Grid>

@@ -6,24 +6,15 @@ import Footer from "../Footer/Footer";
 
 const Layout = () => {
   return (
-    <>
+    <Container>
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
         <main>
-          <Container
-            sx={{
-              maxWidth: "1280px",
-              margin: "0 auto",
-              pl: "14px",
-              pr: "14px",
-            }}
-          >
-            <Outlet />
-          </Container>
+          <Outlet />
         </main>
       </Suspense>
       <Footer />
-    </>
+    </Container>
   );
 };
 
