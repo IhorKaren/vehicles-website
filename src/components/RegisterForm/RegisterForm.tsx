@@ -13,6 +13,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import { route } from "../../constants/route";
 
 type FormValues = {
   firstName: string;
@@ -124,7 +125,19 @@ const RegisterForm = () => {
               />
             </Grid>
             <Grid item xs={12}>
-              <FormLabel id="account-type-choice">Account Type</FormLabel>
+              <FormLabel
+                id="account-type-choice"
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <Typography variant="body1">Account Type</Typography>
+                <Link component={NavLink} to={route.MEMBERSHIP} variant="body2">
+                  Learn More
+                </Link>
+              </FormLabel>
               <Controller
                 name="accountType"
                 control={control}
@@ -161,7 +174,7 @@ const RegisterForm = () => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link component={NavLink} to="/auth/login" variant="body2">
+              <Link component={NavLink} to={route.SIGN_IN} variant="body2">
                 Already have an account? Login
               </Link>
             </Grid>
