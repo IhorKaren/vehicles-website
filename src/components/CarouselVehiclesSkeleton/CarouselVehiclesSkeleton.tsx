@@ -1,10 +1,11 @@
 import { AppCarousel } from "../../shared/AppCarousel/AppCarousel";
 import { VehCardSkeleton } from "../VehCardSkeleton/VehCardSkeleton";
+import { FC } from "react";
 
-export const CarouselVehiclesSkeleton = () => {
+export const CarouselVehiclesSkeleton: FC = () => {
   return (
     <AppCarousel>
-      {Array.from({ length: 5 }).map((item, index) => (
+      {Array.from({ length: 5 }).map((_item, index) => (
         <VehCardSkeleton key={index} isCarousel={true} />
       ))}
     </AppCarousel>

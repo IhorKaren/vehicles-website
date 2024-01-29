@@ -1,7 +1,16 @@
 import { MenuItem } from "@mui/material";
 import { StyledMenuItem } from "../AppSelect.styles";
 
-export const renderPlaceholder = (placeholder) => {
+type Option = {
+  code: string;
+  name: string;
+};
+
+type RenderPlaceholderProps = {
+  placeholder: string;
+};
+
+export const renderPlaceholder = ({ placeholder }: RenderPlaceholderProps) => {
   return (
     <MenuItem value="" disabled style={{ backgroundColor: "transparent" }}>
       {placeholder}
@@ -9,7 +18,11 @@ export const renderPlaceholder = (placeholder) => {
   );
 };
 
-export const renderOptions = (options) => {
+type RenderOptionsProps = {
+  options: Option[];
+};
+
+export const renderOptions = ({ options }: RenderOptionsProps) => {
   return options.map((option) => {
     const { code, name } = option;
     return (

@@ -1,14 +1,14 @@
-import { AppBar } from "@mui/material";
+import { AppBar, Theme } from "@mui/material";
 import Toolbar from "@mui/material/Toolbar";
 
 import styled from "@emotion/styled";
 
-export const AppBarStyled = styled(AppBar)`
-  background: ${({ theme }) => theme.palette.background.default};
-  padding-top: 5px;
+export const AppBarStyled = styled(AppBar)(({ theme }: { theme: Theme }) => ({
+  background: theme.palette.background.default,
+  paddingTop: "5px",
   /* position: sticky; */
-  /* background-color: #0f0f0f; */
-`;
+  /* backgroundColor: '#0f0f0f', */
+}));
 
 export const MenuWrapper = styled.div`
   margin-left: auto;

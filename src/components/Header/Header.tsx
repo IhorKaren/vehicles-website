@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { IconButton } from "@mui/material";
+import { IconButton, Theme, useTheme } from "@mui/material";
 import { Box, Button, Typography } from "@mui/material";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 
@@ -57,10 +57,13 @@ const Header = () => {
       console.log(darkMode);
     };
   // }, [darkMode]);
-
+  const theme: Theme = useTheme();
   return (
     <>
-      <AppBarStyled sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+      <AppBarStyled
+        theme={theme}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      >
         <Box component="header">
           <ToolbarStyled>
             <Link

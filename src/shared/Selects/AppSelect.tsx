@@ -1,5 +1,5 @@
 import { Controller, Control, FieldErrors, FieldValues } from "react-hook-form";
-import { InputLabel, Select } from "@mui/material";
+import { InputLabel, Select, FormHelperText } from "@mui/material";
 import { renderOptions, renderPlaceholder } from "./utils/selectHelpers";
 
 interface AppSelectProps {
@@ -7,14 +7,16 @@ interface AppSelectProps {
   errors: FieldErrors;
   name: string;
   label: string;
-  options: { label: string; value: string }[];
-  margin?: "dense" | "none" | undefined;
+  options: { code: string; name: string }[];
+  margin?: "dense" | "none";
   variant?: "standard" | "outlined" | "filled";
   placeholder?: string;
   defaultValue?: string;
 }
+
 export const AppSelect: React.FC<AppSelectProps> = ({
   control,
+  errors,
   name,
   label,
   options,
@@ -23,6 +25,8 @@ export const AppSelect: React.FC<AppSelectProps> = ({
   placeholder = "Choose an option",
   defaultValue = "",
 }: AppSelectProps) => {
+  const errorMessage = errors[name]?.message;
+
   return (
     <Controller
       name={name}
@@ -38,7 +42,7 @@ export const AppSelect: React.FC<AppSelectProps> = ({
           <Select
             labelId={`${name}-label`}
             id={`${name}-select`}
-            error={false}
+            error={Boolean(errorMessage)}
             fullWidth
             margin={margin}
             variant={variant}
@@ -48,9 +52,12 @@ export const AppSelect: React.FC<AppSelectProps> = ({
             }}
             {...field}
           >
-            {placeholder && renderPlaceholder(placeholder)}
-            {renderOptions(options)}
+            {placeholder && renderPlaceholder({ placeholder })}
+            {renderOptions({ options })}
           </Select>
+          {errorMessage && (
+            <FormHelperText error>Something wrong</FormHelperText>
+          )}
         </>
       )}
     />

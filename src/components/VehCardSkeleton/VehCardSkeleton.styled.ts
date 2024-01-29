@@ -1,6 +1,14 @@
-import { styled } from "@mui/material";
+import { styled, Theme } from "@mui/material";
 
-export const VehCardWrapper = styled("div")(({ theme, isCarousel }) => {
+type VehCardWrapperProps = {
+  theme: Theme;
+  isCarousel: boolean;
+};
+
+export const VehCardWrapper = styled("div")<VehCardWrapperProps>(({
+  theme,
+  isCarousel,
+}) => {
   return {
     position: "relative",
     display: "flex",

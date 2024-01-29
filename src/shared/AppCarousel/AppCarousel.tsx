@@ -1,15 +1,16 @@
-import Slider from "react-slick";
-
-import PropTypes from "prop-types";
-
+import Slider, { Settings } from "react-slick";
 import { AppCarouselWrapper } from "./AppCarousel.styled";
+import { ReactNode } from "react";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./AppCarouselStyles.css";
+type AppCarouselProps = {
+  children: ReactNode;
+};
 
-export const AppCarousel = ({ children }) => {
-  const settings = {
+export const AppCarousel = ({ children }: AppCarouselProps) => {
+  const settings: Settings = {
     dots: false,
     infinite: false,
     speed: 1500,
@@ -55,8 +56,4 @@ export const AppCarousel = ({ children }) => {
       <Slider {...settings}>{children}</Slider>
     </AppCarouselWrapper>
   );
-};
-
-AppCarousel.propTypes = {
-  children: PropTypes.node.isRequired,
 };

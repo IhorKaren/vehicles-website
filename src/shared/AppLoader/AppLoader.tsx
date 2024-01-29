@@ -1,6 +1,8 @@
-import { Backdrop, CircularProgress } from "@mui/material";
+import { Backdrop, CircularProgress, BackdropProps } from "@mui/material";
 
-const AppLoader = (props) => {
+type AppLoaderProps = BackdropProps;
+
+const AppLoader: React.FC<AppLoaderProps> = (props) => {
   return (
     <Backdrop {...props} open={true} style={{ zIndex: 9999 }}>
       <CircularProgress color="inherit" />

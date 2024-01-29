@@ -1,4 +1,4 @@
-import { Avatar, Typography } from "@mui/material";
+import { Avatar, Typography, useTheme } from "@mui/material";
 import Skeleton from "@mui/material/Skeleton";
 import {
   ButtonsSkeletonWrapper,
@@ -7,10 +7,15 @@ import {
   RectangularWrapper,
   TitleSkeletonWrapper,
 } from "./VehCardSkeleton.styled";
-
-export const VehCardSkeleton = ({ isCarousel }) => {
+type VehCardSkeletonProps = {
+  isCarousel: boolean;
+};
+export const VehCardSkeleton: React.FC<VehCardSkeletonProps> = ({
+  isCarousel,
+}): JSX.Element => {
+  const theme = useTheme();
   return (
-    <VehCardWrapper isCarousel={isCarousel}>
+    <VehCardWrapper isCarousel={isCarousel} theme={theme}>
       <CircleWrapper>
         <Skeleton variant="circular" sx={{ bgcolor: "#e2e2e2" }}>
           <Avatar />
