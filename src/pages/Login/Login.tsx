@@ -19,7 +19,7 @@ const Login = () => {
   }, [loginError, dispatch]);
 
   const onSubmit = (user: LoginFormValues): void => {
-    console.log(dispatch(login(user)));
+    dispatch(login(user));
   };
 
   return <LoginForm onSubmit={onSubmit} />;

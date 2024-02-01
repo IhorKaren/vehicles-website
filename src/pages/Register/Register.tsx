@@ -19,7 +19,7 @@ const Register = () => {
   }, [loginError, dispatch]);
 
   const onSubmit = (user: RegisterFormValues): void => {
-    console.log(dispatch(register(user)));
+    dispatch(register(user));
   };
 
   return <RegisterForm onSubmit={onSubmit} />;
