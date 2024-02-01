@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { NavLink } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -10,6 +11,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { route } from "../../constants/route";
+import { LoginFormValues } from "src/App.types";
+
+type LoginForm = {
+  onSubmit: (user: LoginFormValues) => void;
+};
 
 type FormValues = {
   email: string;
@@ -21,7 +27,7 @@ const schema = Yup.object().shape({
   password: Yup.string().required("Password is required!"),
 });
 
-const LoginForm = () => {
+const LoginForm: FC<LoginForm> = ({ onSubmit }) => {
   const {
     register,
     handleSubmit,
@@ -31,13 +37,8 @@ const LoginForm = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    const user = {
-      ...data,
-    };
-
-    console.log(user);
-
+  const onFormSubmit: SubmitHandler<FormValues> = (data) => {
+    onSubmit(data);
     reset();
   };
 
@@ -56,7 +57,11 @@ const LoginForm = () => {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <Box component="form" onSubmit={handleSubmit(onSubmit)} sx={{ mt: 3 }}>
+        <Box
+          component="form"
+          onSubmit={handleSubmit(onFormSubmit)}
+          sx={{ mt: 3 }}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Tab, Tabs, Typography } from "@mui/material";
-import { SearchFormadv } from "../Hero/SearchFormadv";
+// import { SearchFormadv } from "../Hero/SearchFormadv";
 
 type TabPanelProps = {
   children: React.ReactNode;
@@ -71,7 +71,7 @@ export const MyTabs: React.FC<MyTabsProps> = ({ items, defaultActive }) => {
       {items.map((item, index) => (
         <TabPanel value={value} index={index} key={index}>
           {item.heading}
-          <SearchFormadv item={item} />
+          {/* <SearchFormadv item={item} /> */}
         </TabPanel>
       ))}
     </Box>
