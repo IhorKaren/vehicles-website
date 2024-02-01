@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser } from "../../redux/auth/operations";
+import { register } from "../../redux/auth/operations";
 import { clearError } from "../../redux/auth/authSlice";
 import { AppDispatch } from "../../redux/store";
 import { authError } from "../../redux/auth/selectors";
@@ -19,7 +19,7 @@ const Register = () => {
   }, [loginError, dispatch]);
 
   const onSubmit = (user: RegisterFormValues): void => {
-    console.log(dispatch(registerUser(user)));
+    console.log(dispatch(register(user)));
   };
 
   return <RegisterForm onSubmit={onSubmit} />;

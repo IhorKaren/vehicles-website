@@ -25,7 +25,7 @@ const clearAuthHeader = (): void => {
   axios.defaults.headers.common.Authorization = "";
 };
 
-export const registerUser = createAsyncThunk<User, RegisterUser>(
+export const register = createAsyncThunk<User, RegisterUser>(
   "auth/register",
   async (credentials, thunkAPI) => {
     try {
@@ -40,7 +40,7 @@ export const registerUser = createAsyncThunk<User, RegisterUser>(
   },
 );
 
-export const logIn = createAsyncThunk<User, LoginUser>(
+export const login = createAsyncThunk<User, LoginUser>(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {

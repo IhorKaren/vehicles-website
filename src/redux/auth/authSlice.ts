@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import persistReducer from "redux-persist/es/persistReducer";
 import storage from "redux-persist/lib/storage";
-import { registerUser, logIn, refreshUser, logOut } from "./operations";
+import { register, login, refreshUser, logOut } from "./operations";
 
 import { State } from "../../App.types";
 
@@ -36,24 +36,24 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(registerUser.pending, (state) => {
+      .addCase(register.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(registerUser.fulfilled, (state, { payload }) => {
+      .addCase(register.fulfilled, (state, { payload }) => {
         state.user = payload;
         state.token = payload.token;
         state.isLoggedIn = true;
         state.isLoading = false;
         state.error = false;
       })
-      .addCase(registerUser.rejected, (state) => {
+      .addCase(register.rejected, (state) => {
         state.isLoading = false;
         state.error = true;
       })
-      .addCase(logIn.pending, (state) => {
+      .addCase(login.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(logIn.fulfilled, (state, { payload }) => {
+      .addCase(login.fulfilled, (state, { payload }) => {
         state.user = {
           firstName: payload.firstName,
           lastName: payload.lastName,
@@ -66,7 +66,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = false;
       })
-      .addCase(logIn.rejected, (state) => {
+      .addCase(login.rejected, (state) => {
         state.isLoading = false;
         state.error = true;
       })
