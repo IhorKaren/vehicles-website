@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { register } from "../../redux/auth/operations";
-import { clearError } from "../../redux/auth/authSlice";
+import { register } from "../../redux/auth";
+import { clearError } from "../../redux/auth";
 import { AppDispatch } from "../../redux/store";
-import { authError } from "../../redux/auth/selectors";
+import { authError } from "../../redux/auth";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import { RegisterFormValues } from "src/App.types";
 

@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Suspense, useEffect } from "react";
-import { refreshUser } from "./redux/auth/operations";
-// import { isRefresh } from "./redux/auth/selectors";
+import { refreshUser } from "./redux/auth";
+// import { isRefresh } from "./redux/auth";
 import { AppDispatch } from "./redux/store";
 import "./App.css";
 import Layout from "./components/Layout/Layout";
