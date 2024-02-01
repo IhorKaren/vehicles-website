@@ -16,3 +16,11 @@ export type State = {
   isLoggedIn: boolean;
   isRefreshing: boolean;
 };
+
+export type RegisterFormValues = {
+  firstName: string;
+  lastName: string;
+  accountType: string;
+  email: string;
+  password: string;
+};

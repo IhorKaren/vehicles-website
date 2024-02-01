@@ -1,3 +1,4 @@
+import { FC } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
@@ -14,13 +15,10 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { route } from "../../constants/route";
+import { RegisterFormValues } from "src/App.types";
 
-type FormValues = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  accountType: string;
+type RegisterForm = {
+  onSubmit: (user: RegisterFormValues) => void;
 };
 
 const schema = Yup.object().shape({
@@ -31,24 +29,19 @@ const schema = Yup.object().shape({
   accountType: Yup.string().required(),
 });
 
-const RegisterForm = () => {
+const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
   const {
     register,
     handleSubmit,
     reset,
     control,
     formState: { errors },
-  } = useForm<FormValues>({
+  } = useForm<RegisterFormValues>({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    const user = {
-      ...data,
-    };
-
-    console.log(user);
-
+  const onFormSubmit: SubmitHandler<RegisterFormValues> = (data) => {
+    onSubmit(data);
     reset();
   };
 
@@ -67,7 +60,11 @@ const RegisterForm = () => {
         <Typography component="h1" variant="h5">
           Register
         </Typography>
-        <Box component="form" onSubmit={handleSubmit(onSubmit)} sx={{ mt: 3 }}>
+        <Box
+          component="form"
+          onSubmit={handleSubmit(onFormSubmit)}
+          sx={{ mt: 3 }}
+        >
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -141,23 +138,23 @@ const RegisterForm = () => {
               <Controller
                 name="accountType"
                 control={control}
-                defaultValue="member"
+                defaultValue="private"
                 render={({ field }) => (
                   <RadioGroup row aria-label="account-type-choice" {...field}>
                     <FormControlLabel
-                      value="member"
+                      value="private"
                       control={<Radio />}
-                      label="Member"
+                      label="Private"
                     />
                     <FormControlLabel
-                      value="seller"
+                      value="trader"
                       control={<Radio />}
-                      label="Seller"
+                      label="Trader"
                     />
                     <FormControlLabel
-                      value="agent"
+                      value="business"
                       control={<Radio />}
-                      label="Agent"
+                      label="Business"
                     />
                   </RadioGroup>
                 )}

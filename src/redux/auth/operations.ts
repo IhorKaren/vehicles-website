@@ -26,10 +26,10 @@ const clearAuthHeader = (): void => {
 };
 
 export const registerUser = createAsyncThunk<User, RegisterUser>(
-  "users/signup",
+  "auth/register",
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post("/users/signup", credentials);
+      const res = await axios.post("/auth/register", credentials);
 
       setAuthHeader(res.data.token);
       return res.data;
@@ -44,7 +44,7 @@ export const logIn = createAsyncThunk<User, LoginUser>(
   "auth/login",
   async (credentials, thunkAPI) => {
     try {
-      const res = await axios.post("/users/login", credentials);
+      const res = await axios.post("/auth/login", credentials);
       setAuthHeader(res.data.token);
       return res.data;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -56,7 +56,7 @@ export const logIn = createAsyncThunk<User, LoginUser>(
 
 export const logOut = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
   try {
-    await axios.post("/users/logout");
+    await axios.post("/auth/logout");
 
     clearAuthHeader();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -77,7 +77,7 @@ export const refreshUser = createAsyncThunk<User>(
 
     try {
       setAuthHeader(persistedToken);
-      const res = await axios.get("/users/current");
+      const res = await axios.get("/auth/current");
       return res.data;
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
