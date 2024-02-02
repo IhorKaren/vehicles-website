@@ -24,7 +24,7 @@ const BackgroundOverlayBox = styled(Box)(() => ({
 
 export const Hero: FC = () => {
   return (
-    <BackgroundOverlayBox sx={{ py: 10, px: 1 }}>
+    <BackgroundOverlayBox sx={{ py: 10, px: 1, overflow: "hidden" }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
           <AdvancedSearch />
