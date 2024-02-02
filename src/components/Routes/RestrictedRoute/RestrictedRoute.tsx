@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
-import { isLogin } from "../../../redux/auth";
+import { isLoggedIn } from "../../../redux/auth";
 import { Navigate } from "react-router-dom";
 
 type RouteProps = {
@@ -12,7 +12,7 @@ export const RestrictedRoute: FC<RouteProps> = ({
   component: Component,
   redirectTo = "/",
 }) => {
-  const isLoggedIn: boolean = useSelector(isLogin);
+  const isLogged: boolean = useSelector(isLoggedIn);
 
-  return isLoggedIn ? <Navigate to={redirectTo} /> : <Component />;
+  return isLogged ? <Navigate to={redirectTo} /> : <Component />;
 };

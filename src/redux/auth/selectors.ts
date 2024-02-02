@@ -1,6 +1,6 @@
 import { RootState } from "../store";
 
-export const isLogin = (state: RootState) => state.auth.isLoggedIn;
+export const isLoggedIn = (state: RootState) => state.auth.isLoggedIn;
 
 export const isRefresh = (state: RootState) => state.auth.isRefreshing;
 
