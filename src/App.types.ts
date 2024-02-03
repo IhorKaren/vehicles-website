@@ -21,6 +21,7 @@ export type RegisterFormValues = {
   firstName: string;
   lastName: string;
   accountType: string;
+  companyName?: string;
   email: string;
   password: string;
 };
