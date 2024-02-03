@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
@@ -21,29 +21,48 @@ type RegisterForm = {
   onSubmit: (user: RegisterFormValues) => void;
 };
 
-const schema = Yup.object().shape({
+const baseSchema = Yup.object().shape({
   firstName: Yup.string().required("First Name is required!"),
   lastName: Yup.string().required("Last Name is required!"),
   email: Yup.string().required("Email is required!"),
-  password: Yup.string().required("Password is required!"),
+  password: Yup.string().min(6).required("Password is required!"),
   accountType: Yup.string().required(),
 });
 
 const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
+  const [isBusiness, setIsBusiness] = useState(false);
+
+  const schema = isBusiness
+    ? baseSchema.shape({
+        companyName: Yup.string().min(4).required("Company Name is required!"),
+      })
+    : baseSchema;
+
   const {
     register,
     handleSubmit,
     reset,
     control,
+    watch,
     formState: { errors },
   } = useForm<RegisterFormValues>({
     resolver: yupResolver(schema),
   });
 
+  const accountType = watch("accountType");
+
   const onFormSubmit: SubmitHandler<RegisterFormValues> = (data) => {
     onSubmit(data);
     reset();
   };
+
+  useEffect(() => {
+    if (accountType === "business") {
+      setIsBusiness(true);
+      return;
+    }
+    setIsBusiness(false);
+  }, [accountType]);
 
   return (
     <Container maxWidth="xs">
@@ -95,6 +114,22 @@ const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
                 variant="filled"
               />
             </Grid>
+            {isBusiness && (
+              <Grid item xs={12}>
+                <TextField
+                  type="text"
+                  id="companyName"
+                  {...register("companyName")}
+                  error={Boolean(errors.companyName)}
+                  helperText={errors.companyName?.message}
+                  fullWidth
+                  label="Company Name"
+                  name="companyName"
+                  autoComplete="family-name"
+                  variant="filled"
+                />
+              </Grid>
+            )}
             <Grid item xs={12}>
               <TextField
                 type="email"
