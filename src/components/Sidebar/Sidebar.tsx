@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, FC } from "react";
+import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -8,8 +9,15 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import { route } from "../../constants/route.js";
+import { navPages } from "../../constants/navPages";
 
-export default function Sidebar() {
+type SidebarProps = {
+  isLogged: boolean;
+  onClick: () => void;
+};
+
+const Sidebar: FC<SidebarProps> = ({ isLogged, onClick }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -31,30 +39,51 @@ export default function Sidebar() {
       <Drawer anchor={"left"} open={isOpen} onClose={() => toggleDrawer()}>
         <Box
           sx={{ width: 250 }}
+          component="nav"
           role="presentation"
           onClick={() => toggleDrawer()}
         >
           <List>
-            {["Vehicles", "Accessories", "Auctions", "Sell"].map((text) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemText primary={text} />
+            {navPages.map((page) => (
+              <ListItem key={page.link} disablePadding>
+                <ListItemButton component={Link} to={page.link}>
+                  <ListItemText primary={page.label} />
                 </ListItemButton>
               </ListItem>
             ))}
           </List>
           <Divider />
-          <List>
-            {["Profile", "Dashboard", "Logout"].map((text) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemText primary={text} />
+          {!isLogged ? (
+            <List>
+              <ListItem disablePadding>
+                <ListItemButton component={Link} to={route.SIGN_IN}>
+                  <ListItemText primary="Login" />
                 </ListItemButton>
               </ListItem>
-            ))}
-          </List>
+              <ListItem disablePadding>
+                <ListItemButton component={Link} to={route.SIGN_UP}>
+                  <ListItemText primary="Register" />
+                </ListItemButton>
+              </ListItem>
+            </List>
+          ) : (
+            <List>
+              <ListItem disablePadding>
+                <ListItemButton component={Link} to={route.USER_ACCOUNT}>
+                  <ListItemText primary="Profile" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton onClick={onClick}>
+                  <ListItemText primary="Logout" />
+                </ListItemButton>
+              </ListItem>
+            </List>
+          )}
         </Box>
       </Drawer>
     </div>
   );
-}
+};
+
+export default Sidebar;

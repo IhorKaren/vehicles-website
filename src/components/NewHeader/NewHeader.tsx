@@ -105,7 +105,7 @@ function NewHeader() {
             ))}
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <Sidebar />
+            <Sidebar isLogged={isLogged} onClick={hadleLogOutClick}/>
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" }, flexGrow: 0 }}>
             <Tooltip title="Open settings">
