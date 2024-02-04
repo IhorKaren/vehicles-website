@@ -16,7 +16,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import PersonIcon from "@mui/icons-material/Person";
 import Sidebar from "../Sidebar/Sidebar";
-import Searchbar from "../NewSearchbar/NewSearchbar";
+import Searchbar from "../Searchbar/Searchbar";
 import { route } from "../../constants/route.js";
 import { navPages } from "../../constants/navPages";
 
@@ -47,7 +47,7 @@ function Header() {
       position="fixed"
       sx={{
         background:
-          "linear-gradient(to right, #197941, #24a354,#3cd376, #7eb440, #adb635);",
+          "linear-gradient(to right, #197941, #24a354,#3cd376, #377e2d, #197941);",
       }}
     >
       <Container maxWidth="xl">
