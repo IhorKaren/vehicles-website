@@ -43,7 +43,13 @@ function Header() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "royalblue" }}>
+    <AppBar
+      position="fixed"
+      sx={{
+        background:
+          "linear-gradient(to right, #197941, #24a354,#3cd376, #7eb440, #adb635);",
+      }}
+    >
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
