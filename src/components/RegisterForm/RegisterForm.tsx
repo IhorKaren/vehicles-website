@@ -22,10 +22,16 @@ type RegisterForm = {
 };
 
 const baseSchema = Yup.object().shape({
-  firstName: Yup.string().required("First Name is required!"),
-  lastName: Yup.string().required("Last Name is required!"),
-  email: Yup.string().required("Email is required!"),
-  password: Yup.string().min(6).required("Password is required!"),
+  firstName: Yup.string()
+    .min(2, "Name must be at least 2 characters")
+    .required("First Name is required!")
+    .trim(),
+  lastName: Yup.string()
+    .min(2, "Last name must be at least 2 characters")
+    .required("Last Name is required!")
+    .trim(),
+  email: Yup.string().required("Email is required!").trim(),
+  password: Yup.string().min(6).required("Password is required!").trim(),
   accountType: Yup.string().required(),
 });
 
@@ -34,7 +40,12 @@ const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
 
   const schema = isBusiness
     ? baseSchema.shape({
-        companyName: Yup.string().min(4).required("Company Name is required!"),
+        companyName: Yup.string()
+          .min(4)
+          .required("Company Name is required!")
+          .trim(),
+        companyCode: Yup.string().optional().trim(),
+        companyAddress: Yup.string().optional().trim(),
       })
     : baseSchema;
 
@@ -98,6 +109,7 @@ const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
                 label="First Name"
                 autoFocus
                 variant="filled"
+                required
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -112,23 +124,55 @@ const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
                 name="lastName"
                 autoComplete="family-name"
                 variant="filled"
+                required
               />
             </Grid>
             {isBusiness && (
-              <Grid item xs={12}>
-                <TextField
-                  type="text"
-                  id="companyName"
-                  {...register("companyName")}
-                  error={Boolean(errors.companyName)}
-                  helperText={errors.companyName?.message}
-                  fullWidth
-                  label="Company Name"
-                  name="companyName"
-                  autoComplete="family-name"
-                  variant="filled"
-                />
-              </Grid>
+              <>
+                <Grid item xs={12}>
+                  <TextField
+                    type="text"
+                    id="companyName"
+                    {...register("companyName")}
+                    error={Boolean(errors.companyName)}
+                    helperText={errors.companyName?.message}
+                    fullWidth
+                    label="Company Name"
+                    name="companyName"
+                    autoComplete="family-name"
+                    variant="filled"
+                    required
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    type="text"
+                    id="companyCode"
+                    {...register("companyCode")}
+                    error={Boolean(errors.companyCode)}
+                    helperText={errors.companyCode?.message}
+                    fullWidth
+                    label="Company Registration Number"
+                    name="companyCode"
+                    autoComplete="family-name"
+                    variant="filled"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    type="text"
+                    id="companyAddress"
+                    {...register("companyAddress")}
+                    error={Boolean(errors.companyAddress)}
+                    helperText={errors.companyAddress?.message}
+                    fullWidth
+                    label="Company Address"
+                    name="companyAddress"
+                    autoComplete="family-name"
+                    variant="filled"
+                  />
+                </Grid>
+              </>
             )}
             <Grid item xs={12}>
               <TextField
@@ -141,6 +185,7 @@ const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
                 label="Email Address"
                 autoComplete="email"
                 variant="filled"
+                required
               />
             </Grid>
             <Grid item xs={12}>
@@ -154,6 +199,7 @@ const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
                 label="Password"
                 autoComplete="new-password"
                 variant="filled"
+                required
               />
             </Grid>
             <Grid item xs={12}>
