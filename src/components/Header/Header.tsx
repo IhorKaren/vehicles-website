@@ -47,7 +47,7 @@ function Header() {
       position="fixed"
       sx={{
         background:
-          "linear-gradient(to right, #197941, #24a354,#3cd376, #377e2d, #197941);",
+          "linear-gradient(to right, #ce8c13, #d69213, #FFA500, #ce9428, #cc8d19);",
       }}
     >
       <Container maxWidth="xl">
