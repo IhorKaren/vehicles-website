@@ -21,9 +21,9 @@ const SortBy = () => {
             id: "uncontrolled-native",
           }}
         >
-          <option value={"Best"}>Best Selling</option>
-          <option value={""}>From Low To High</option>
-          <option value={""}>From High To Low</option>
+          <option value={"best"}>Best Selling</option>
+          <option value={"low"}>From Low To High</option>
+          <option value={"high"}>From High To Low</option>
         </NativeSelect>
       </FormControl>
     </Box>
