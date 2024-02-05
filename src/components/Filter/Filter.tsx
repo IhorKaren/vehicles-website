@@ -7,14 +7,7 @@ type FilterProps = {
 
 const Filter: FC<FilterProps> = ({ children }) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        py: "20px",
-        maxWidth: "240px",
-      }}
-    >
+    <>
       <Typography
         variant="h6"
         textTransform="uppercase"
@@ -26,7 +19,7 @@ const Filter: FC<FilterProps> = ({ children }) => {
             position: "absolute",
             bottom: "50%",
             right: "0",
-            width: "65%",
+            width: "60%",
             height: "2px",
             backgroundColor: "#000",
           },
@@ -37,7 +30,7 @@ const Filter: FC<FilterProps> = ({ children }) => {
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         {children}
       </Box>
-    </Box>
+    </>
   );
 };
 

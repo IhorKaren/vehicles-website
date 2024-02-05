@@ -28,6 +28,25 @@ export type RegisterFormValues = {
   password: string;
 };
 
+export type Vehicle = {
+  id: number;
+  year: number;
+  make: string;
+  model: string;
+  type: string;
+  img: string;
+  description: string;
+  fuelConsumption: string;
+  engineSize: string;
+  accessories: string[];
+  functionalities: string[];
+  price: string;
+  rentalCompany: string;
+  address: string;
+  rentalConditions: string;
+  mileage: number;
+};
+
 export type LoginFormValues = {
   email: string;
   password: string;
