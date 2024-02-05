@@ -2,9 +2,11 @@ import { FC, useState, ChangeEvent } from "react";
 import { Box } from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
+import InputLabel from "@mui/material/InputLabel";
+import Input from "@mui/material/Input";
+import InputAdornment from "@mui/material/InputAdornment";
 
 type PriceSliderProps = {
   min: number;
@@ -65,29 +67,41 @@ const PriceSlider: FC<PriceSliderProps> = ({ min, max }) => {
 
   return (
     <Box>
-      <Typography sx={{ mb: 0 }}>Price</Typography>
+      <Typography sx={{ mb: 1 }}>Price</Typography>
       <FormGroup>
         <Grid container spacing={2} sx={{ mb: 2 }}>
           <Grid item sm={6}>
-            <TextField
-              label="From"
+            <InputLabel htmlFor="from">
+              <Typography variant="body2">From</Typography>
+            </InputLabel>
+            <Input
               id="from"
               size="small"
-              variant="standard"
               type="number"
               value={minValue}
               onChange={onMinValueChange}
+              startAdornment={
+                <InputAdornment sx={{ pb: "3px" }} position="start">
+                  $
+                </InputAdornment>
+              }
             />
           </Grid>
           <Grid item sm={6}>
-            <TextField
-              label="To"
+            <InputLabel htmlFor="to">
+              <Typography variant="body2">To</Typography>
+            </InputLabel>
+            <Input
               id="to"
               size="small"
-              variant="standard"
               type="number"
               value={maxValue}
               onChange={onMaxValueChange}
+              startAdornment={
+                <InputAdornment sx={{ pb: "3px" }} position="start">
+                  $
+                </InputAdornment>
+              }
             />
           </Grid>
         </Grid>
