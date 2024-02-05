@@ -8,6 +8,7 @@ import Layout from "./components/Layout/Layout";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
+import Vehicles from "./pages/Vehicles/Vehicles";
 import Profile from "./pages/Profile/Profile";
 import { ToastContainer } from "react-toastify";
 import MembershipChoice from "./components/MembershipChoice/MembershipChoice";
@@ -45,6 +46,7 @@ function App() {
                   <PrivateRoute component={Profile} redirectTo={route.HOME} />
                 }
               />
+              <Route path={route.VEHICLES} element={<Vehicles />} />
               <Route path={route.MEMBERSHIP} element={<MembershipChoice />} />
               <Route path="*" element={<Home />} />
             </Route>
