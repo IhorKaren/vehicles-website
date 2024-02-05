@@ -1,33 +1,63 @@
+import { useState } from "react";
 import { Container, Box } from "@mui/material";
 import Filter from "../../components/Filter/Filter";
 import SortBy from "../../components/SortBy/SortBy";
 import VehiclesFilter from "../../components/VehiclesFilter/VehiclesFilter";
 import ItemList from "../../components/ItemList/ItemList";
+import FilterSidebar from "../../components/FilterSidebar/FilterSidebar";
 
 const Vehicles = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <Container sx={{ display: "flex", gap: 3 }}>
+    <Container>
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          py: "20px",
-          maxWidth: "200px",
-          flexShrink: 0,
+          display: { xs: "block", md: "flex" },
+          gap: 3,
         }}
       >
-        <Filter>
-          <SortBy />
-          <VehiclesFilter />
-        </Filter>
+        <Box
+          sx={{
+            display: { xs: "none", md: "flex" },
+            flexDirection: "column",
+            py: "20px",
+            maxWidth: "200px",
+            flexShrink: 0,
+          }}
+        >
+          <Filter>
+            <SortBy />
+            <VehiclesFilter />
+          </Filter>
+        </Box>
+        <Box
+          sx={{
+            display: { xs: "flex", md: "none" },
+            flexDirection: "column",
+            py: "20px",
+            flexShrink: 0,
+          }}
+        >
+          <Filter onClick={toggleDrawer}>
+            <SortBy />
+          </Filter>
+        </Box>
+        <Box
+          sx={{
+            py: "20px",
+          }}
+        >
+          <ItemList />
+        </Box>
       </Box>
-      <Box
-        sx={{
-          py: "20px",
-        }}
-      >
-        <ItemList />
-      </Box>
+      <FilterSidebar isOpen={isOpen} onClick={toggleDrawer}>
+        <VehiclesFilter />
+      </FilterSidebar>
     </Container>
   );
 };
