@@ -13,9 +13,17 @@
 
 body {
   margin: 0;
-  padding-top: 68px;
+  padding-top: 54px;
 
   background-color: #ffffff;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 64px;
+  }
+
+  @media screen and (min-width: 900px) {
+    padding-top: 68px;
+  }
 }
 
 h1 {

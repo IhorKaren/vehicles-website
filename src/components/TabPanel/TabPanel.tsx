@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs } from "@mui/material";
 import { SearchFormadv } from "../Hero/SearchFormadv";
 
 type TabPanelProps = {
@@ -18,11 +18,7 @@ export function TabPanel(props: TabPanelProps): React.ReactElement {
       aria-labelledby={`tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box p={3}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {value === index && <Box p={3}>{children}</Box>}
     </div>
   );
 }
@@ -56,7 +52,7 @@ export const MyTabs: React.FC<MyTabsProps> = ({ items, defaultActive }) => {
 
   const handleChange = (
     _event: React.SyntheticEvent,
-    newValue: React.SetStateAction<number>,
+    newValue: React.SetStateAction<number>
   ): void => {
     setValue(newValue);
   };
