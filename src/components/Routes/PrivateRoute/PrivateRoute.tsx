@@ -15,7 +15,7 @@ export const PrivateRoute: FC<RouteProps> = ({
   const isLogged: boolean = useSelector(isLoggedIn);
   const isRefreshing: boolean = useSelector(isRefresh);
 
-  const shouldRedirect: boolean = !isLogged && !isRefreshing;
+  const shouldRedirect: boolean = !isLogged && isRefreshing;
 
   return shouldRedirect ? <Navigate to={redirectTo} /> : <Component />;
 };

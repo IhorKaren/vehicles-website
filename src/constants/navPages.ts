@@ -16,3 +16,22 @@ export const navPages = [
     link: "/sell",
   },
 ];
+
+export const userPages = [
+  {
+    label: "Account Dashboard",
+    link: "/user-account",
+  },
+  {
+    label: "Account Settings",
+    link: "account-settings",
+  },
+  {
+    label: "Membership",
+    link: "notifications",
+  },
+  {
+    label: "Notifications",
+    link: "membership",
+  },
+];
