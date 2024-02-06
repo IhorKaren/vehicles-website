@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Box } from "@mui/material";
 import Filter from "../../components/Filter/Filter";
+import FilterWrap from "../../components/FilterWrap/FilterWrap";
 import SortBy from "../../components/SortBy/SortBy";
 import AccessoriesFilter from "../../components/AccessoriesFilter/AccessoriesFilter";
 import ItemList from "../../components/ItemList/ItemList";
@@ -28,13 +29,15 @@ const Accessories = () => {
             display: { xs: "none", md: "flex" },
             flexDirection: "column",
             py: "20px",
-            maxWidth: "200px",
+            maxWidth: "210px",
             flexShrink: 0,
           }}
         >
           <Filter>
             <SortBy />
-            <AccessoriesFilter />
+            <FilterWrap min={0} max={5000}>
+              <AccessoriesFilter />
+            </FilterWrap>
           </Filter>
         </Box>
         <Box
@@ -58,7 +61,9 @@ const Accessories = () => {
         </Box>
       </Box>
       <FilterSidebar isOpen={isOpen} onClick={toggleDrawer}>
-        <AccessoriesFilter />
+        <FilterWrap min={0} max={5000}>
+          <AccessoriesFilter />
+        </FilterWrap>
       </FilterSidebar>
     </Container>
   );

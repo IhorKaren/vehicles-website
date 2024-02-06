@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Container, Box } from "@mui/material";
 import Filter from "../../components/Filter/Filter";
+import FilterWrap from "../../components/FilterWrap/FilterWrap";
 import SortBy from "../../components/SortBy/SortBy";
 import VehiclesFilter from "../../components/VehiclesFilter/VehiclesFilter";
 import ItemList from "../../components/ItemList/ItemList";
@@ -28,13 +29,15 @@ const Vehicles = () => {
             display: { xs: "none", md: "flex" },
             flexDirection: "column",
             py: "20px",
-            maxWidth: "200px",
+            maxWidth: "210px",
             flexShrink: 0,
           }}
         >
           <Filter>
             <SortBy />
-            <VehiclesFilter />
+            <FilterWrap min={0} max={200000}>
+              <VehiclesFilter />
+            </FilterWrap>
           </Filter>
         </Box>
         <Box
@@ -57,7 +60,9 @@ const Vehicles = () => {
         </Box>
       </Box>
       <FilterSidebar isOpen={isOpen} onClick={toggleDrawer}>
-        <VehiclesFilter />
+        <FilterWrap min={0} max={200000}>
+          <VehiclesFilter />
+        </FilterWrap>
       </FilterSidebar>
     </Container>
   );
