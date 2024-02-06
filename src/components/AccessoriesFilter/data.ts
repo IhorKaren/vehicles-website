@@ -1,0 +1,31 @@
+export const carAccessoriesAndParts = [
+  { id: 1, productType: "Floor Mats" },
+  { id: 2, productType: "Seat Covers" },
+  { id: 3, productType: "Car Covers" },
+  { id: 4, productType: "Wheel Covers" },
+  { id: 5, productType: "Air Fresheners" },
+  { id: 6, productType: "Car Chargers" },
+  { id: 7, productType: "Wiper Blades" },
+  { id: 8, productType: "Oil Filters" },
+  { id: 9, productType: "Brake Pads" },
+  { id: 10, productType: "Spark Plugs" },
+  { id: 11, productType: "Car Wax" },
+  { id: 12, productType: "Headlights" },
+  { id: 13, productType: "Car Batteries" },
+];
+
+export const brands = [
+  { id: 1, brand: "WeatherTech" },
+  { id: 2, brand: "Coverking" },
+  { id: 3, brand: "Carhartt" },
+  { id: 4, brand: "BDK" },
+  { id: 5, brand: "Little Trees" },
+  { id: 6, brand: "Anker" },
+  { id: 7, brand: "Rain-X" },
+  { id: 8, brand: "Mobil 1" },
+  { id: 9, brand: "Bosch" },
+  { id: 10, brand: "NGK" },
+  { id: 11, brand: "Meguiar's" },
+  { id: 12, brand: "Philips" },
+  { id: 13, brand: "DieHard" },
+];

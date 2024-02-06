@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 
 type FilterProps = {
-  children: ReactNode;
+  children?: ReactNode;
   onClick?: () => void;
 };
 
