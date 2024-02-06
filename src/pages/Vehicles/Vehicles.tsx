@@ -24,22 +24,12 @@ const Vehicles = () => {
           gap: 3,
         }}
       >
-        <Box
-          sx={{
-            display: { xs: "none", md: "flex" },
-            flexDirection: "column",
-            py: "20px",
-            maxWidth: "210px",
-            flexShrink: 0,
-          }}
-        >
-          <Filter>
-            <SortBy />
-            <FilterWrap min={0} max={200000}>
-              <VehiclesFilter />
-            </FilterWrap>
-          </Filter>
-        </Box>
+        <Filter>
+          <SortBy />
+          <FilterWrap min={0} max={200000}>
+            <VehiclesFilter />
+          </FilterWrap>
+        </Filter>
         <Box
           sx={{
             display: { xs: "flex", md: "none" },
