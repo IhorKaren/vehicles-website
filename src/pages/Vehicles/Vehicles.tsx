@@ -45,9 +45,8 @@ const Vehicles = () => {
             flexShrink: 0,
           }}
         >
-          <Filter onClick={toggleDrawer}>
-            <SortBy />
-          </Filter>
+          <Filter onClick={toggleDrawer} />
+          <SortBy />
         </Box>
         <Box
           sx={{
