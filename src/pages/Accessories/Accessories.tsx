@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Container, Box } from "@mui/material";
 import Filter from "../../components/Filter/Filter";
 import SortBy from "../../components/SortBy/SortBy";
-import VehiclesFilter from "../../components/VehiclesFilter/VehiclesFilter";
+import AccessoriesFilter from "../../components/AccessoriesFilter/AccessoriesFilter";
 import ItemList from "../../components/ItemList/ItemList";
 import FilterSidebar from "../../components/FilterSidebar/FilterSidebar";
-import VehicleItem from "../../components/VehicleItem/VehicleItem";
-import { carsData } from "./data";
+import AccessoryItem from "../../components/AccessoryItem/AccessoryItem";
+import { accessoriesData } from "./data";
 
-const Vehicles = () => {
+const Accessories = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDrawer = () => {
@@ -34,7 +34,7 @@ const Vehicles = () => {
         >
           <Filter>
             <SortBy />
-            <VehiclesFilter />
+            <AccessoriesFilter />
           </Filter>
         </Box>
         <Box
@@ -54,14 +54,14 @@ const Vehicles = () => {
             py: "20px",
           }}
         >
-          <ItemList data={carsData} component={VehicleItem} />
+          <ItemList data={accessoriesData} component={AccessoryItem} />
         </Box>
       </Box>
       <FilterSidebar isOpen={isOpen} onClick={toggleDrawer}>
-        <VehiclesFilter />
+        <AccessoriesFilter />
       </FilterSidebar>
     </Container>
   );
 };
 
-export default Vehicles;
+export default Accessories;

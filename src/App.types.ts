@@ -47,6 +47,15 @@ export type Vehicle = {
   mileage: number;
 };
 
+export type Accessory = {
+  id: number;
+  name: string;
+  brand: string;
+  description: string;
+  price: number;
+  img: string;
+};
+
 export type LoginFormValues = {
   email: string;
   password: string;

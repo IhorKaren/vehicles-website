@@ -1,8 +1,16 @@
+import { FC } from "react";
 import List from "@mui/material/List";
-import VehicleItem from "../VehicleItem/VehicleItem";
-import { carsData } from "./data";
+import { Vehicle, Accessory } from "../../App.types";
 
-const ItemList = () => {
+type ItemListProps<T> = {
+  data: T[];
+  component: FC<{ item: T }>;
+};
+
+const ItemList = <T extends Vehicle | Accessory>({
+  data,
+  component: Component,
+}: ItemListProps<T>) => {
   return (
     <List
       sx={{
@@ -12,8 +20,8 @@ const ItemList = () => {
         flexWrap: "wrap",
       }}
     >
-      {carsData.map((el) => (
-        <VehicleItem key={el.id} item={el} />
+      {data.map((el) => (
+        <Component key={el.id} item={el} />
       ))}
     </List>
   );

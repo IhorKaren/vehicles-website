@@ -9,6 +9,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import Home from "./pages/Home/Home";
 import Vehicles from "./pages/Vehicles/Vehicles";
+import Accessories from "./pages/Accessories/Accessories";
 import Profile from "./pages/Profile/Profile";
 import { ToastContainer } from "react-toastify";
 import MembershipChoice from "./components/MembershipChoice/MembershipChoice";
@@ -47,6 +48,7 @@ function App() {
                 }
               />
               <Route path={route.VEHICLES} element={<Vehicles />} />
+              <Route path={route.ACCESSORIES} element={<Accessories />} />
               <Route path={route.MEMBERSHIP} element={<MembershipChoice />} />
               <Route path="*" element={<Home />} />
             </Route>

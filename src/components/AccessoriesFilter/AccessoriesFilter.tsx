@@ -3,8 +3,8 @@ import { Box } from "@mui/material";
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import Typography from "@mui/material/Typography";
 import Collapse from "@mui/material/Collapse";
+import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
@@ -12,18 +12,18 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import PriceSlider from "../PriceSlider/PriceSlider";
-import { carList, years } from "./data";
+import { carAccessoriesAndParts, brands } from "./data";
 
-const VehiclesFilter = () => {
-  const [openMake, setOpenMake] = useState(false);
-  const [openYear, setOpenYear] = useState(false);
+const AccessoriesFilter = () => {
+  const [openAccessories, setOpenAccessories] = useState(false);
+  const [openBrand, setOpenBrand] = useState(false);
 
-  const onMakeClick = () => {
-    setOpenMake(!openMake);
+  const onAccessoriesClick = () => {
+    setOpenAccessories(!openAccessories);
   };
 
-  const onYearClick = () => {
-    setOpenYear(!openYear);
+  const onBrandClick = () => {
+    setOpenBrand(!openBrand);
   };
 
   return (
@@ -40,9 +40,9 @@ const VehiclesFilter = () => {
           <Divider />
         </Box>
         <Box>
-          <ListItemButton onClick={onMakeClick} sx={{ px: 0 }}>
-            <ListItemText primary="Make" />
-            {openMake ? <ExpandLess /> : <ExpandMore />}
+          <ListItemButton onClick={onAccessoriesClick} sx={{ px: 0 }}>
+            <ListItemText primary="Accessories" />
+            {openAccessories ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <Divider
             sx={{
@@ -50,18 +50,18 @@ const VehiclesFilter = () => {
               opacity: 0.4,
             }}
           />
-          <Collapse in={openMake} timeout="auto" unmountOnExit>
+          <Collapse in={openAccessories} timeout="auto" unmountOnExit>
             <List
               component="div"
               disablePadding
               sx={{ maxHeight: "206px", overflow: "auto" }}
             >
               <FormGroup>
-                {carList.map((car, i) => (
+                {carAccessoriesAndParts.map((el) => (
                   <FormControlLabel
-                    key={i}
+                    key={el.id}
                     control={<Checkbox />}
-                    label={car.name}
+                    label={el.productType}
                   />
                 ))}
               </FormGroup>
@@ -69,9 +69,9 @@ const VehiclesFilter = () => {
           </Collapse>
         </Box>
         <Box>
-          <ListItemButton onClick={onYearClick} sx={{ px: 0 }}>
-            <ListItemText primary="Year" />
-            {openYear ? <ExpandLess /> : <ExpandMore />}
+          <ListItemButton onClick={onBrandClick} sx={{ px: 0 }}>
+            <ListItemText primary="Brand" />
+            {openBrand ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <Divider
             sx={{
@@ -79,18 +79,18 @@ const VehiclesFilter = () => {
               opacity: 0.4,
             }}
           />
-          <Collapse in={openYear} timeout="auto" unmountOnExit>
+          <Collapse in={openBrand} timeout="auto" unmountOnExit>
             <List
               component="div"
               disablePadding
               sx={{ maxHeight: "206px", overflow: "auto" }}
             >
               <FormGroup>
-                {years.map((year, i) => (
+                {brands.map((el) => (
                   <FormControlLabel
-                    key={i}
+                    key={el.id}
                     control={<Checkbox />}
-                    label={year}
+                    label={el.brand}
                   />
                 ))}
               </FormGroup>
@@ -99,8 +99,8 @@ const VehiclesFilter = () => {
         </Box>
         <Box>
           <ListItemButton sx={{ px: 0 }}>
-            <ListItemText primary="Engine" />
-            {openYear ? <ExpandLess /> : <ExpandMore />}
+            <ListItemText primary="Coverage" />
+            {openBrand ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <Divider
             sx={{
@@ -111,8 +111,8 @@ const VehiclesFilter = () => {
         </Box>
         <Box>
           <ListItemButton sx={{ px: 0 }}>
-            <ListItemText primary="Body Style" />
-            {openYear ? <ExpandLess /> : <ExpandMore />}
+            <ListItemText primary="Finish" />
+            {openBrand ? <ExpandLess /> : <ExpandMore />}
           </ListItemButton>
           <Divider
             sx={{
@@ -122,10 +122,10 @@ const VehiclesFilter = () => {
           />
         </Box>
 
-        <PriceSlider min={0} max={20000} />
+        <PriceSlider min={0} max={5000} />
       </List>
     </>
   );
 };
 
-export default VehiclesFilter;
+export default AccessoriesFilter;
