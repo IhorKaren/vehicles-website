@@ -8,6 +8,7 @@ export const route = Object.freeze({
 
   FAVORITE_VEHICLES: "vehicles/favorites",
   USER_ACCOUNT: "/user-account",
-  NOTIFICATIONS: "/notifications",
-  MEMBERSHIP: "/membership",
+  ACCOUNT_SETTINGS: "account-settings",
+  NOTIFICATIONS: "notifications",
+  MEMBERSHIP: "membership",
 });
