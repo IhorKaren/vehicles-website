@@ -13,7 +13,7 @@ import Accessories from "./pages/Accessories/Accessories";
 import Profile from "./pages/Profile/Profile";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import AccountSettings from "./pages/AccountSettings/AccountSettings";
-import Membership from "./pages/Membership/Membership";
+import MyListings from "./pages/MyListings/MyListings";
 import Notifications from "./pages/Notifications/Notifications";
 import { ToastContainer } from "react-toastify";
 import MembershipChoice from "./components/MembershipChoice/MembershipChoice";
@@ -55,7 +55,7 @@ function App() {
                   path={route.ACCOUNT_SETTINGS}
                   element={<AccountSettings />}
                 />
-                <Route path={route.MEMBERSHIP} element={<Membership />} />
+                <Route path={route.MEMBERSHIP} element={<MyListings />} />
                 <Route path={route.NOTIFICATIONS} element={<Notifications />} />
               </Route>
               <Route path={route.VEHICLES} element={<Vehicles />} />
