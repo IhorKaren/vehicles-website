@@ -17,8 +17,9 @@ import MenuItem from "@mui/material/MenuItem";
 import PersonIcon from "@mui/icons-material/Person";
 import Sidebar from "../Sidebar/Sidebar";
 import Searchbar from "../Searchbar/Searchbar";
+import Badge from "@mui/material/Badge";
 import { route } from "../../constants/route.js";
-import { navPages } from "../../constants/navPages";
+import { navPages, userPages } from "../../constants/navPages";
 
 function Header() {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -114,13 +115,16 @@ function Header() {
             <Sidebar isLogged={isLogged} onClick={hadleLogOutClick} />
           </Box>
           <Box sx={{ display: { xs: "none", md: "flex" }, flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar>
-                  {userInitials === "" ? <PersonIcon /> : userInitials}
-                </Avatar>
-              </IconButton>
-            </Tooltip>
+            <Badge overlap="circular" variant="dot" color="secondary">
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar>
+                    {userInitials === "" ? <PersonIcon /> : userInitials}
+                  </Avatar>
+                </IconButton>
+              </Tooltip>
+            </Badge>
+
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
@@ -166,11 +170,52 @@ function Header() {
                       to={route.USER_ACCOUNT}
                       onClick={handleCloseUserMenu}
                     >
-                      Profile
+                      <Typography textTransform="capitalize">
+                        Profile
+                      </Typography>
                     </Button>
                   </MenuItem>
+                  {userPages.map(({ label, link }) => (
+                    <MenuItem key={label}>
+                      {label === route.NOTIFICATIONS ? (
+                        <Button
+                          component={Link}
+                          to={`/user-account/${link}`}
+                          onClick={handleCloseUserMenu}
+                        >
+                          <Typography
+                            textTransform="capitalize"
+                            sx={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 2,
+                            }}
+                          >
+                            {label}
+                            <Badge
+                              overlap="circular"
+                              badgeContent={1}
+                              color="primary"
+                            ></Badge>
+                          </Typography>
+                        </Button>
+                      ) : (
+                        <Button
+                          component={Link}
+                          to={`/user-account/${link}`}
+                          onClick={handleCloseUserMenu}
+                        >
+                          <Typography textTransform="capitalize">
+                            {label}
+                          </Typography>
+                        </Button>
+                      )}
+                    </MenuItem>
+                  ))}
                   <MenuItem>
-                    <Button onClick={hadleLogOutClick}>Logout</Button>
+                    <Button onClick={hadleLogOutClick}>
+                      <Typography textTransform="capitalize">Logout</Typography>
+                    </Button>
                   </MenuItem>
                 </Box>
               )}

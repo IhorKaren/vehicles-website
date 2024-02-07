@@ -19,19 +19,15 @@ export const navPages = [
 
 export const userPages = [
   {
-    label: "Profile",
-    link: "/user-account",
-  },
-  {
-    label: "My Listings",
+    label: "my listings",
     link: "membership",
   },
   {
-    label: "Notifications",
+    label: "notifications",
     link: "notifications",
   },
   {
-    label: "Settings",
+    label: "settings",
     link: "account-settings",
   },
 ];

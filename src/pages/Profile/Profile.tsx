@@ -10,6 +10,7 @@ import {
   Divider,
 } from "@mui/material";
 import Badge from "@mui/material/Badge";
+import { route } from "../../constants/route";
 import { userPages } from "../../constants/navPages";
 
 const Profile = () => {
@@ -34,6 +35,16 @@ const Profile = () => {
               width: "100%",
             }}
           >
+            <ListItem sx={{ maxWidth: "max-content" }}>
+              <Link
+                component={NavLink}
+                color="text.primary"
+                underline="none"
+                to={route.USER_ACCOUNT}
+              >
+                <Typography variant="body1">Profile</Typography>
+              </Link>
+            </ListItem>
             {userPages.map(({ label, link }) => (
               <ListItem key={label} sx={{ maxWidth: "max-content" }}>
                 <Link
@@ -42,8 +53,9 @@ const Profile = () => {
                   underline="none"
                   to={link}
                 >
-                  {label === "Notifications" ? (
+                  {label === route.NOTIFICATIONS ? (
                     <Typography
+                      textTransform="capitalize"
                       variant="body1"
                       sx={{ display: "flex", alignItems: "center", gap: 2 }}
                     >
@@ -51,7 +63,9 @@ const Profile = () => {
                       <Badge badgeContent={1} color="primary"></Badge>
                     </Typography>
                   ) : (
-                    <Typography variant="body1">{label}</Typography>
+                    <Typography textTransform="capitalize" variant="body1">
+                      {label}
+                    </Typography>
                   )}
                 </Link>
               </ListItem>
