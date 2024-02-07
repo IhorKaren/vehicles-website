@@ -17,7 +17,7 @@ import Container from "@mui/material/Container";
 import { route } from "../../constants/route";
 import { RegisterFormValues } from "src/App.types";
 
-type RegisterForm = {
+type RegisterFormProps = {
   onSubmit: (user: RegisterFormValues) => void;
 };
 
@@ -35,7 +35,7 @@ const baseSchema = Yup.object().shape({
   accountType: Yup.string().required(),
 });
 
-const RegisterForm: FC<RegisterForm> = ({ onSubmit }) => {
+const RegisterForm: FC<RegisterFormProps> = ({ onSubmit }) => {
   const [isBusiness, setIsBusiness] = useState(false);
 
   const schema = isBusiness

@@ -28,6 +28,12 @@ export type RegisterFormValues = {
   password: string;
 };
 
+export type ChangeProfileFormValues = {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+};
+
 export type Vehicle = {
   id: number;
   year: number;
