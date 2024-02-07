@@ -34,6 +34,18 @@ export type ChangeProfileFormValues = {
   email?: string;
 };
 
+export type ChangePasswordFormValues = {
+  oldPassword: string;
+  password: string;
+};
+
+export type CreditCardFormValues = {
+  number: string;
+  month: string;
+  year: string;
+  cvc: string;
+};
+
 export type Vehicle = {
   id: number;
   year: number;

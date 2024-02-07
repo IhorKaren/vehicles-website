@@ -22,7 +22,7 @@ const Dashboard = () => {
   };
 
   return (
-    <Box p={1} mb={"100%"} sx={{ width: "100%" }}>
+    <Box p={1}>
       <Box
         sx={{
           display: "flex",

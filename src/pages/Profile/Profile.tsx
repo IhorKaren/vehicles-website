@@ -24,7 +24,7 @@ const Profile = () => {
           display: "flex",
           flexDirection: { xs: "column", md: "row" },
           alignItems: { xs: "start", sm: "stretch" },
-          gap: { xs: 1, md: 3 },
+          mb: "100%",
         }}
       >
         <Box>
@@ -35,7 +35,7 @@ const Profile = () => {
               width: "100%",
             }}
           >
-            <ListItem sx={{ maxWidth: "max-content" }}>
+            <ListItem sx={{ maxWidth: "max-content", pl: 0 }}>
               <Link
                 component={NavLink}
                 color="text.primary"
@@ -46,7 +46,7 @@ const Profile = () => {
               </Link>
             </ListItem>
             {userPages.map(({ label, link }) => (
-              <ListItem key={label} sx={{ maxWidth: "max-content" }}>
+              <ListItem key={label} sx={{ maxWidth: "max-content", pl: 0 }}>
                 <Link
                   component={NavLink}
                   color="text.primary"
@@ -73,9 +73,9 @@ const Profile = () => {
           </List>
           <Divider />
         </Box>
-        <Box>
+        <Container maxWidth="md">
           <Outlet />
-        </Box>
+        </Container>
       </Box>
     </Container>
   );
