@@ -5,6 +5,7 @@ export const route = Object.freeze({
   HOME: "/",
   VEHICLES: "/vehicles",
   ACCESSORIES: "/accessories",
+  SELL: "/sell",
 
   FAVORITE_VEHICLES: "vehicles/favorites",
   USER_ACCOUNT: "/user-account",

@@ -59,7 +59,14 @@ const AccountSettings = () => {
             Account
           </Typography>
 
-          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
             <Box>
               <Typography variant="body1">Password</Typography>
               <Typography>**************</Typography>
