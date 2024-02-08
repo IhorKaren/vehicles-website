@@ -40,9 +40,9 @@ export type ChangePasswordFormValues = {
 };
 
 export type CreditCardFormValues = {
+  holder: string;
   number: string;
-  month: string;
-  year: string;
+  expiration: string;
   cvc: string;
 };
 

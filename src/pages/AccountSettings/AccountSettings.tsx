@@ -1,8 +1,9 @@
 import { useState, MouseEvent } from "react";
 import { Box, Button, Typography, Divider } from "@mui/material";
 import MainModal from "../../components/Modal/Modal";
-import { ChangePasswordFormValues } from "src/App.types";
+import { ChangePasswordFormValues, CreditCardFormValues } from "src/App.types";
 import ChangePasswordForm from "../../components/ChangePasswordForm/ChangePasswordForm";
+import CreditCardForm from "../../components/CreditCardForm/CreditCardForm";
 
 const AccountSettings = () => {
   const [{ passwordModal, cardModal }, setIsModalOpen] = useState({
@@ -27,6 +28,10 @@ const AccountSettings = () => {
   };
 
   const onPasswordSubmit = (data: ChangePasswordFormValues) => {
+    console.log(data);
+  };
+
+  const onCreditCardSubmit = (data: CreditCardFormValues) => {
     console.log(data);
   };
 
@@ -89,7 +94,7 @@ const AccountSettings = () => {
           {passwordModal ? (
             <ChangePasswordForm onSubmit={onPasswordSubmit} />
           ) : (
-            <div></div>
+            <CreditCardForm onSubmit={onCreditCardSubmit} />
           )}
         </MainModal>
       </Box>
