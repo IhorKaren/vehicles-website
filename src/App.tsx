@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import AccountSettings from "./pages/AccountSettings/AccountSettings";
 import MyListings from "./pages/MyListings/MyListings";
 import Notifications from "./pages/Notifications/Notifications";
+import Listing from "./pages/Listing/Listing";
 import { ToastContainer } from "react-toastify";
 import MembershipChoice from "./components/MembershipChoice/MembershipChoice";
 import { route } from "./constants/route";
@@ -60,6 +61,7 @@ function App() {
               </Route>
               <Route path={route.VEHICLES} element={<Vehicles />} />
               <Route path={route.ACCESSORIES} element={<Accessories />} />
+              <Route path={route.SELL} element={<Listing />} />
               <Route path={route.MEMBERSHIP} element={<MembershipChoice />} />
               <Route path="*" element={<Home />} />
             </Route>
