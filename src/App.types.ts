@@ -35,7 +35,7 @@ export type ChangeProfileFormValues = {
 };
 
 export type ChangePasswordFormValues = {
-  oldPassword: string;
+  currentPassword: string;
   password: string;
 };
 

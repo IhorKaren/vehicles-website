@@ -15,7 +15,7 @@ type ChangePasswordFormProps = {
 };
 
 const schema = Yup.object().shape({
-  oldPassword: Yup.string().required("Password is required!").trim(),
+  currentPassword: Yup.string().required("Password is required!").trim(),
   password: Yup.string().min(6).required("Password is required!").trim(),
 });
 
@@ -55,13 +55,13 @@ const ChangePasswordForm: FC<ChangePasswordFormProps> = ({ onSubmit }) => {
             <Grid item xs={12}>
               <TextField
                 type="password"
-                id="oldPassword"
-                {...register("oldPassword")}
-                error={Boolean(errors.oldPassword)}
-                helperText={errors.oldPassword?.message}
+                id="currentPassword"
+                {...register("currentPassword")}
+                error={Boolean(errors.currentPassword)}
+                helperText={errors.currentPassword?.message}
                 fullWidth
-                label="Old Password"
-                name="oldPassword"
+                label="Current Password"
+                name="currentPassword"
                 autoComplete="off"
                 variant="filled"
               />
