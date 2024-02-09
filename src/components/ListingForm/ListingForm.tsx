@@ -15,6 +15,7 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
+import DropZone from "../DropZone/DropZone";
 import { ListingFormValues } from "src/App.types";
 import { years } from "../VehiclesFilter/data";
 
@@ -321,7 +322,14 @@ const ListingForm: FC<ListingFormProps> = ({ activeStep, onSubmit }) => {
           </Box>
         </Box>
       ) : (
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 5 }}></Box>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+          <Typography variant="h6">Photos</Typography>
+          <Typography variant="body2">
+            Please upload at least 6 photos of the exterior and interior of the
+            car.
+          </Typography>
+          <DropZone />
+        </Box>
       )}
     </Box>
   );
