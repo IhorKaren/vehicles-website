@@ -1,45 +1,33 @@
-import { useState, ReactNode, FC } from "react";
+import { ReactNode, FC } from "react";
 import Box from "@mui/material/Box";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 
-const steps = ["Select campaign settings", "Create an ad"];
+const steps = ["Application Step", "Final Step"];
 
 type StepperProps = {
   children: ReactNode;
+  activeStep: number;
+  handleNext: () => void;
+  handleBack: () => void;
 };
 
-const HorizontalStepper: FC<StepperProps> = ({ children }) => {
-  const [activeStep, setActiveStep] = useState(0);
-
-  const isStepOptional = (step: number) => {
-    return step === 1;
-  };
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
+const HorizontalStepper: FC<StepperProps> = ({
+  children,
+  activeStep,
+  handleNext,
+  handleBack,
+}) => {
   return (
     <Box sx={{ width: "100%" }}>
       <Stepper activeStep={activeStep}>
-        {steps.map((label, index) => {
+        {steps.map((label) => {
           const stepProps: { completed?: boolean } = {};
           const labelProps: {
             optional?: ReactNode;
           } = {};
-          if (isStepOptional(index)) {
-            labelProps.optional = (
-              <Typography variant="caption">Optional</Typography>
-            );
-          }
 
           return (
             <Step key={label} {...stepProps}>
@@ -48,10 +36,7 @@ const HorizontalStepper: FC<StepperProps> = ({ children }) => {
           );
         })}
       </Stepper>
-
-      <Typography sx={{ mt: 2, mb: 1 }}>
-        Step {activeStep + 1} {children}
-      </Typography>
+      Step {activeStep + 1} {children}
       <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
         <Button
           color="inherit"

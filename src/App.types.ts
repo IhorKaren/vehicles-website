@@ -28,6 +28,18 @@ export type RegisterFormValues = {
   password: string;
 };
 
+export type ListingFormValues = {
+  fullName: string;
+  phone: string;
+  seller: string;
+  vin: string;
+  make: string;
+  model: string;
+  year: number;
+  transmission: string;
+  mileage: string;
+};
+
 export type ChangeProfileFormValues = {
   firstName?: string;
   lastName?: string;

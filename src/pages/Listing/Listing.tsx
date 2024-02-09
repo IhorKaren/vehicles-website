@@ -1,8 +1,18 @@
+import { useState } from "react";
 import { Container, Typography, Box } from "@mui/material";
 import HorizontalStepper from "../../components/Stepper/Stepper";
 import ListingForm from "../../components/ListingForm/ListingForm";
 
 const Listing = () => {
+  const [activeStep, setActiveStep] = useState(0);
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
   const onSubmit = (data: unknown) => {
     console.log(data);
   };
@@ -33,8 +43,12 @@ const Listing = () => {
           auction live.
         </Typography>
       </Box>
-      <HorizontalStepper>
-        <ListingForm onSubmit={onSubmit} />
+      <HorizontalStepper
+        activeStep={activeStep}
+        handleNext={handleNext}
+        handleBack={handleBack}
+      >
+        <ListingForm onSubmit={onSubmit} activeStep={activeStep} />
       </HorizontalStepper>
     </Container>
   );
