@@ -17,11 +17,6 @@ type LoginForm = {
   onSubmit: (user: LoginFormValues) => void;
 };
 
-type FormValues = {
-  email: string;
-  password: string;
-};
-
 const schema = Yup.object().shape({
   email: Yup.string().required("Email is required!"),
   password: Yup.string().required("Password is required!"),
@@ -33,11 +28,11 @@ const LoginForm: FC<LoginForm> = ({ onSubmit }) => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormValues>({
+  } = useForm<LoginFormValues>({
     resolver: yupResolver(schema),
   });
 
-  const onFormSubmit: SubmitHandler<FormValues> = (data) => {
+  const onFormSubmit: SubmitHandler<LoginFormValues> = (data) => {
     onSubmit(data);
     reset();
   };
