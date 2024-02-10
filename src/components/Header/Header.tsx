@@ -142,7 +142,7 @@ function Header() {
               onClose={handleCloseUserMenu}
             >
               {!isLogged ? (
-                <Box>
+                <>
                   <MenuItem>
                     <Button
                       component={Link}
@@ -161,14 +161,16 @@ function Header() {
                       Register
                     </Button>
                   </MenuItem>
-                </Box>
+                </>
               ) : (
-                <Box>
-                  <MenuItem>
+                <>
+                  <MenuItem sx={{ p: 0 }}>
                     <Button
                       component={Link}
                       to={route.USER_ACCOUNT}
                       onClick={handleCloseUserMenu}
+                      fullWidth
+                      sx={{ p: 2 }}
                     >
                       <Typography textTransform="capitalize">
                         Profile
@@ -176,12 +178,14 @@ function Header() {
                     </Button>
                   </MenuItem>
                   {userPages.map(({ label, link }) => (
-                    <MenuItem key={label}>
+                    <MenuItem key={label} sx={{ p: 0 }}>
                       {label === route.NOTIFICATIONS ? (
                         <Button
                           component={Link}
                           to={`/user-account/${link}`}
                           onClick={handleCloseUserMenu}
+                          fullWidth
+                          sx={{ p: 2 }}
                         >
                           <Typography
                             textTransform="capitalize"
@@ -204,6 +208,8 @@ function Header() {
                           component={Link}
                           to={`/user-account/${link}`}
                           onClick={handleCloseUserMenu}
+                          fullWidth
+                          sx={{ p: 2 }}
                         >
                           <Typography textTransform="capitalize">
                             {label}
@@ -212,12 +218,12 @@ function Header() {
                       )}
                     </MenuItem>
                   ))}
-                  <MenuItem>
-                    <Button onClick={hadleLogOutClick}>
+                  <MenuItem sx={{ p: 0 }}>
+                    <Button onClick={hadleLogOutClick} fullWidth sx={{ p: 2 }}>
                       <Typography textTransform="capitalize">Logout</Typography>
                     </Button>
                   </MenuItem>
-                </Box>
+                </>
               )}
             </Menu>
           </Box>
