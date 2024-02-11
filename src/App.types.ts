@@ -70,7 +70,7 @@ export type Vehicle = {
   engineSize: string;
   accessories: string[];
   functionalities: string[];
-  price: string;
+  price: number;
   rentalCompany: string;
   address: string;
   rentalConditions: string;
