@@ -1,13 +1,12 @@
-import { FC } from "react";
+import { CSSProperties, FC } from "react";
 import { CustomSideSwiper } from "./CustomSwiper.styled";
 import { Scrollbar, A11y, Thumbs, FreeMode, Mousewheel } from "swiper/modules";
 import { SwiperSlide } from "swiper/react";
-import { CSSObject } from "@emotion/react";
 
 interface SideSwiperProps {
   setThumbsSwiper: any;
   photos: string[];
-  style?: CSSObject;
+  style?: CSSProperties;
 }
 const SideSwiper: FC<SideSwiperProps> = ({
   setThumbsSwiper,
