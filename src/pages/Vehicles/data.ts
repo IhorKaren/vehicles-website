@@ -5,7 +5,14 @@ export const carsData = [
     make: "Audi",
     model: "A7",
     type: "Sedan",
-    img: "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/rMpl8gJG-1uIeyqOJlv-(edit).jpg?t=164877816051",
+    img: [
+      "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/rMpl8gJG-1uIeyqOJlv-(edit).jpg?t=164877816051",
+      "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/rMpl8gJG-1uIeyqOJlv-(edit).jpg?t=164877816051",
+      "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/rMpl8gJG-1uIeyqOJlv-(edit).jpg?t=164877816051",
+      "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/rMpl8gJG-1uIeyqOJlv-(edit).jpg?t=164877816051",
+      "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/7a0a3c6148108c9c64425dd85e0181fa3cccb652/photos/rMpl8gJG-1uIeyqOJlv-(edit).jpg?t=164877816051",
+    ],
+
     description:
       "~30,600 Miles, 453-hp V8, Some Modifications, Reviewed by Alanis King",
     fuelConsumption: "11.8",
@@ -26,6 +33,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 25\nValid driver's license\nSecurity deposit and proof of insurance required",
     mileage: 1035,
+    createdAt: new Date(),
   },
   {
     id: 91621562,
@@ -33,9 +41,13 @@ export const carsData = [
     make: "Mercedes-Benz",
     model: "A-Class",
     type: "Hatchback",
-    img: "https://img-ik.cars.co.za/news-site-za/images/2016/05/DSC_5214.jpg",
-    description:
-      "Twin-Turbo V6, Emerald Green Metallic, Unmodified",
+    img: [
+      "https://img-ik.cars.co.za/news-site-za/images/2016/05/DSC_5214.jpg",
+      "https://img-ik.cars.co.za/news-site-za/images/2016/05/DSC_5214.jpg",
+      "https://img-ik.cars.co.za/news-site-za/images/2016/05/DSC_5214.jpg",
+      "https://img-ik.cars.co.za/news-site-za/images/2016/05/DSC_5214.jpg",
+    ],
+    description: "Twin-Turbo V6, Emerald Green Metallic, Unmodified",
     fuelConsumption: "7.8",
     engineSize: "2.0L I6",
     accessories: [
@@ -54,6 +66,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 25\nValid driver's license\nSecurity deposit and proof of insurance required",
     mileage: 2383,
+    createdAt: new Date(),
   },
   {
     id: 963030,
@@ -61,7 +74,11 @@ export const carsData = [
     make: "Bentley",
     model: "Continental",
     type: "Convertible",
-    img: "https://vehicle-images.dealerinspire.com/b024-110009518/SCBDG4ZG5LC083757/1de9eefcf180b16cc6354462b329e6d2.jpg",
+    img: [
+      "https://vehicle-images.dealerinspire.com/b024-110009518/SCBDG4ZG5LC083757/1de9eefcf180b16cc6354462b329e6d2.jpg",
+      "https://vehicle-images.dealerinspire.com/b024-110009518/SCBDG4ZG5LC083757/1de9eefcf180b16cc6354462b329e6d2.jpg",
+      "https://vehicle-images.dealerinspire.com/b024-110009518/SCBDG4ZG5LC083757/1de9eefcf180b16cc6354462b329e6d2.jpg",
+    ],
     description:
       "1 Owner, Dual-Motor AWD, Premium Upgrades Package, Texas-Owned",
     fuelConsumption: "22.5",
@@ -82,6 +99,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 30\nValid driver's license\nSecurity deposit and insurance required",
     mileage: 2311,
+    createdAt: new Date(),
   },
   {
     id: 9262429,
@@ -89,9 +107,13 @@ export const carsData = [
     make: "Lamborghini",
     model: "Huracan",
     type: "Sport car",
-    img: "https://hips.hearstapps.com/hmg-prod/images/2022-lamborghini-huracan-tecnica-101-1657303967.jpg?crop=0.700xw:0.790xh;0.0717xw,0.183xh&resize=640:*",
-    description:
-      "Gated 6-Speed Manual, 571-hp V12, AWD, Some Modifications",
+    img: [
+      "https://hips.hearstapps.com/hmg-prod/images/2022-lamborghini-huracan-tecnica-101-1657303967.jpg?crop=0.700xw:0.790xh;0.0717xw,0.183xh&resize=640:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2022-lamborghini-huracan-tecnica-101-1657303967.jpg?crop=0.700xw:0.790xh;0.0717xw,0.183xh&resize=640:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2022-lamborghini-huracan-tecnica-101-1657303967.jpg?crop=0.700xw:0.790xh;0.0717xw,0.183xh&resize=640:*",
+      "https://hips.hearstapps.com/hmg-prod/images/2022-lamborghini-huracan-tecnica-101-1657303967.jpg?crop=0.700xw:0.790xh;0.0717xw,0.183xh&resize=640:*",
+    ],
+    description: "Gated 6-Speed Manual, 571-hp V12, AWD, Some Modifications",
     fuelConsumption: "25.0",
     engineSize: "6.5L V12",
     accessories: [
@@ -110,6 +132,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 30\nValid driver's license\nSecurity deposit and insurance required",
     mileage: 1832,
+    createdAt: new Date(),
   },
   {
     id: 9651345,
@@ -117,7 +140,13 @@ export const carsData = [
     make: "BMW",
     model: "M4",
     type: "Sport car",
-    img: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bmw-m4-2021-5-jpg-1625677202.jpg",
+    img: [
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bmw-m4-2021-5-jpg-1625677202.jpg",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bmw-m4-2021-5-jpg-1625677202.jpg",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bmw-m4-2021-5-jpg-1625677202.jpg",
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/bmw-m4-2021-5-jpg-1625677202.jpg",
+    ],
+
     description:
       "6-Speed Manual, M Sport Package, 3.0-Liter 6-Cylinder, Unmodified",
     fuelConsumption: "13.2",
@@ -138,6 +167,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 25\nValid driver's license\nSecurity deposit and proof of insurance required",
     mileage: 6993,
+    createdAt: new Date(),
   },
   {
     id: 961825248,
@@ -145,9 +175,14 @@ export const carsData = [
     make: "Land Rover",
     model: "Range Rover Velar",
     type: "SUV",
-    img: "https://img.automoto.ua/overview/land-rover-range-rover-velar-2020-a85-huge-1647.jpg",
-    description:
-      "1 Owner, Turbodiesel V6, 4WD, Texas-Owned, Unmodified",
+    img: [
+      "https://img.automoto.ua/overview/land-rover-range-rover-velar-2020-a85-huge-1647.jpg",
+      "https://img.automoto.ua/overview/land-rover-range-rover-velar-2020-a85-huge-1647.jpg",
+      "https://img.automoto.ua/overview/land-rover-range-rover-velar-2020-a85-huge-1647.jpg",
+      "https://img.automoto.ua/overview/land-rover-range-rover-velar-2020-a85-huge-1647.jpg",
+      "https://img.automoto.ua/overview/land-rover-range-rover-velar-2020-a85-huge-1647.jpg",
+    ],
+    description: "1 Owner, Turbodiesel V6, 4WD, Texas-Owned, Unmodified",
     fuelConsumption: "11.8",
     engineSize: "3.0L V6",
     accessories: [
@@ -166,6 +201,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
     mileage: 2356,
+    createdAt: new Date(),
   },
   {
     id: 95812,
@@ -173,7 +209,13 @@ export const carsData = [
     make: "Buick",
     model: "Enclave",
     type: "SUV",
-    img: "https://i.infocar.ua/i/2/1276/100983/1920x.jpg",
+    img: [
+      "https://i.infocar.ua/i/2/1276/100983/1920x.jpg",
+      "https://i.infocar.ua/i/2/1276/100983/1920x.jpg",
+      "https://i.infocar.ua/i/2/1276/100983/1920x.jpg",
+      "https://i.infocar.ua/i/2/1276/100983/1920x.jpg",
+      "https://i.infocar.ua/i/2/1276/100983/1920x.jpg",
+    ],
     description:
       "V6 Power, Final-Year Model, Some Modifications, Engine Replaced in 2023",
     fuelConsumption: "10.5",
@@ -190,6 +232,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 25\nValid driver's license\nSecurity deposit required",
     mileage: 5858,
+    createdAt: new Date(),
   },
   {
     id: 961662,
@@ -197,7 +240,12 @@ export const carsData = [
     make: "Mercedes-Benz",
     model: "SL-Class",
     type: "Convertible",
-    img: "https://carsales.pxcrush.net/carsales/cars/private/599amily7tsii2xlbfed2g9gk.jpg?pxc_method=gravityfill&pxc_bgtype=self&pxc_size=900%2C600",
+    img: [
+      "https://carsales.pxcrush.net/carsales/cars/private/599amily7tsii2xlbfed2g9gk.jpg?pxc_method=gravityfill&pxc_bgtype=self&pxc_size=900%2C600",
+      "https://carsales.pxcrush.net/carsales/cars/private/599amily7tsii2xlbfed2g9gk.jpg?pxc_method=gravityfill&pxc_bgtype=self&pxc_size=900%2C600",
+      "https://carsales.pxcrush.net/carsales/cars/private/599amily7tsii2xlbfed2g9gk.jpg?pxc_method=gravityfill&pxc_bgtype=self&pxc_size=900%2C600",
+      "https://carsales.pxcrush.net/carsales/cars/private/599amily7tsii2xlbfed2g9gk.jpg?pxc_method=gravityfill&pxc_bgtype=self&pxc_size=900%2C600",
+    ],
     description:
       "V8 Power, Arctic White, Royal Blue Interior, Mostly Unmodified",
     fuelConsumption: "11.8",
@@ -218,6 +266,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 25\nValid driver's license\nSecurity deposit and proof of insurance required",
     mileage: 5722,
+    createdAt: new Date(),
   },
   {
     id: 962429,
@@ -225,7 +274,12 @@ export const carsData = [
     make: "Lamborghini",
     model: "Murcielago",
     type: "Convertible",
-    img: "https://www.westcoastexoticcars.com/imagetag/82/main/l/Used-2009-Lamborghini-Murcielago-1610053605.jpg",
+    img: [
+      "https://www.westcoastexoticcars.com/imagetag/82/main/l/Used-2009-Lamborghini-Murcielago-1610053605.jpg",
+      "https://www.westcoastexoticcars.com/imagetag/82/main/l/Used-2009-Lamborghini-Murcielago-1610053605.jpg",
+      "https://www.westcoastexoticcars.com/imagetag/82/main/l/Used-2009-Lamborghini-Murcielago-1610053605.jpg",
+      "https://www.westcoastexoticcars.com/imagetag/82/main/l/Used-2009-Lamborghini-Murcielago-1610053605.jpg",
+    ],
     description:
       "~2,600 Miles, Blu Fontus, Full Exterior Carbon Pack, Reviewed by Kennan Rolsen",
     fuelConsumption: "25.0",
@@ -246,6 +300,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 30\nValid driver's license\nSecurity deposit and insurance required",
     mileage: 5832,
+    createdAt: new Date(),
   },
   {
     id: 9655135,
@@ -253,7 +308,12 @@ export const carsData = [
     make: "Chevrolet",
     model: "Camaro",
     type: "Convertible",
-    img: "https://upload.wikimedia.org/wikipedia/commons/3/30/1993ChevroletCamaroZ28-001.jpg",
+    img: [
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/1993ChevroletCamaroZ28-001.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/1993ChevroletCamaroZ28-001.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/1993ChevroletCamaroZ28-001.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/1993ChevroletCamaroZ28-001.jpg",
+    ],
     description:
       "~6,100 Miles, 1 of 25 SC Stage II Units in 2020, 6-Speed Manual, 1,103-hp Supercharged V8",
     fuelConsumption: "13.5",
@@ -274,6 +334,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
     mileage: 6330,
+    createdAt: new Date(),
   },
   {
     id: 9666430,
@@ -281,7 +342,11 @@ export const carsData = [
     make: "Chrysler",
     model: "Voyager",
     type: "Van/Minivan",
-    img: "https://cdn.carbuzz.com/gallery-images/1600/669000/400/669413.jpg",
+    img: [
+      "https://cdn.carbuzz.com/gallery-images/1600/669000/400/669413.jpg",
+      "https://cdn.carbuzz.com/gallery-images/1600/669000/400/669413.jpg",
+      "https://cdn.carbuzz.com/gallery-images/1600/669000/400/669413.jpg",
+    ],
     description:
       "~50,200 Miles, Classic Yellow, Southern-Owned, Mostly Unmodified",
     fuelConsumption: "8.2",
@@ -302,6 +367,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
     mileage: 5807,
+    createdAt: new Date(),
   },
   {
     id: 9618348,
@@ -309,9 +375,13 @@ export const carsData = [
     make: "Land Rover",
     model: "Range Rover Sport",
     type: "SUV",
-    img: "https://a.allegroimg.com/original/11c6bb/4bad5de845499dae0a7081e22a64/Land-Rover-Range-Rover-Sport-SVR-5-0-V8-S-C-550KM",
-    description:
-      "1 Owner, Turbodiesel V6, 4WD, Texas-Owned, Unmodified",
+    img: [
+      "https://a.allegroimg.com/original/11c6bb/4bad5de845499dae0a7081e22a64/Land-Rover-Range-Rover-Sport-SVR-5-0-V8-S-C-550KM",
+      "https://a.allegroimg.com/original/11c6bb/4bad5de845499dae0a7081e22a64/Land-Rover-Range-Rover-Sport-SVR-5-0-V8-S-C-550KM",
+      "https://a.allegroimg.com/original/11c6bb/4bad5de845499dae0a7081e22a64/Land-Rover-Range-Rover-Sport-SVR-5-0-V8-S-C-550KM",
+      "https://a.allegroimg.com/original/11c6bb/4bad5de845499dae0a7081e22a64/Land-Rover-Range-Rover-Sport-SVR-5-0-V8-S-C-550KM",
+    ],
+    description: "1 Owner, Turbodiesel V6, 4WD, Texas-Owned, Unmodified",
     fuelConsumption: "11.8",
     engineSize: "3.0L V6",
     accessories: [
@@ -330,6 +400,7 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
     mileage: 4856,
+    createdAt: new Date(),
   },
   {
     id: 9684330,
@@ -337,7 +408,11 @@ export const carsData = [
     make: "Kia",
     model: "Rio",
     type: "Sedan, Hatchback",
-    img: "https://media.ed.edmunds-media.com/kia/rio/2018/oem/2018_kia_rio_sedan_ex_fq_oem_1_1600.jpg",
+    img: [
+      "https://media.ed.edmunds-media.com/kia/rio/2018/oem/2018_kia_rio_sedan_ex_fq_oem_1_1600.jpg",
+      "https://media.ed.edmunds-media.com/kia/rio/2018/oem/2018_kia_rio_sedan_ex_fq_oem_1_1600.jpg",
+      "https://media.ed.edmunds-media.com/kia/rio/2018/oem/2018_kia_rio_sedan_ex_fq_oem_1_1600.jpg",
+    ],
     description:
       "Dual-Motor AWD, First Edition Package, Ultra-Fast 800V DC Charging",
     fuelConsumption: "6.2",
@@ -358,5 +433,6 @@ export const carsData = [
     rentalConditions:
       "Minimum age: 21\nValid driver's license\nSecurity deposit and insurance required",
     mileage: 6234,
+    createdAt: new Date(),
   },
 ];

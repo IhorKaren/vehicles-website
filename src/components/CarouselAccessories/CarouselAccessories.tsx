@@ -7,10 +7,14 @@ import { getFavorite } from "../CarouselVehicles/VehicleCard/mockdata/getFavorit
 type CarouselAccessoriesProps = {
   popularAccessoriesData: Accessory[];
 };
-export const CarouselAccessories: React.FC<CarouselAccessoriesProps> = ({ popularAccessoriesData }) => {
+export const CarouselAccessories: React.FC<CarouselAccessoriesProps> = ({
+  popularAccessoriesData,
+}) => {
   // const userId = useSelector(selectUser)?.id;
   const userId: string = mockUser[0]?.id;
-  const [favoriteAccessoriesIds, setFavoriteAccessoriesIds] = useState<number[]>([]);
+  const [favoriteAccessoriesIds, setFavoriteAccessoriesIds] = useState<
+    number[]
+  >([]);
 
   useEffect(() => {
     if (userId) {

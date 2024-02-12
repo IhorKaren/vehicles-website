@@ -17,9 +17,11 @@ import {
   VehicleName,
   VehiclePrice,
 } from "./VehicleCard.styled";
-import { IconButton, Stack} from "@mui/material";
+import { IconButton, Stack } from "@mui/material";
 import { customColors } from "../../../constants/customColors";
 import { convertToMoney } from "../../../helpers/convertToMoney";
+import { Link } from "react-router-dom";
+import { route } from "../../../constants/route";
 
 type VehicleCardProps = {
   vehicleInfo: Vehicle;
@@ -40,7 +42,10 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({
     img,
     description,
     address,
+    id,
   } = vehicleInfo;
+  // const router = useLocation();
+
   const [favorite, setFavorite] = useState(false);
   // const selectUser = useSelector(user);
   // const userId = useSelector(selectUser)?.id;
@@ -62,7 +67,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({
 
   const deleteFavorite = (): void => {
     selectUser.favoriteVehicles = selectUser.favoriteVehicles.filter(
-      (id: number) => id !== vehicleId
+      (id: number) => id !== vehicleId,
     );
   };
 
@@ -85,8 +90,9 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({
   return (
     <VehicleCardWrapper>
       <VehicleImageWrapper>
-        <VehicleImage src={img} alt={make} width="300" height="300" />
-
+        <Link to={`${route.VEHICLES}/${id}`}>
+          <VehicleImage src={img[0]} alt={make} width="300" height="300" />
+        </Link>
         <FavoriteButton>
           {userId ? (
             <IconButton
@@ -116,7 +122,7 @@ export const VehicleCard: React.FC<VehicleCardProps> = ({
       >
         <MainInfoWrapper>
           <VehicleName>
-            {transformText(`${year} ${make} ${model}`, 30)}
+            {transformText(`${year} ${make} ${model}`, 24)}
           </VehicleName>
         </MainInfoWrapper>
         <VehicleDetail>

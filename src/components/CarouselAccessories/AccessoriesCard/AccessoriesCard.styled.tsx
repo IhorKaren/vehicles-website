@@ -63,7 +63,6 @@ export const AccessoryName = styled("h2")(({ theme }) => ({
   margin: "20px 10px 5px",
 }));
 
-
 export const AccessoryDescription = styled("p")(() => ({
   fontFamily: "Inter",
   fontSize: "12px",
@@ -73,11 +72,6 @@ export const AccessoryDescription = styled("p")(() => ({
   margin: "-5px 10px 0 10px",
 }));
 
-
-
-export const ButtonsWrapper = styled('div')(() => ({
-  display: 'flex',
-  justifyContent: 'space-between',
-  padding: '10px 10px 0 10px',
-  gap: '10px',
+export const ButtonsWrapper = styled("div")(() => ({
+  padding: "10px 10px 0 10px",
 }));
