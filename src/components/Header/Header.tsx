@@ -51,7 +51,7 @@ function Header() {
           "linear-gradient(to right, #ce8c13, #d69213, #FFA500, #ce9428, #cc8d19);",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Toolbar
           disableGutters
           sx={{ display: "flex", gap: { xs: "10px", md: "15px" } }}
