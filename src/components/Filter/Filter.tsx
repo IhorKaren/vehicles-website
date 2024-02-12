@@ -10,15 +10,7 @@ type FilterProps = {
 
 const Filter: FC<FilterProps> = ({ children, onClick }) => {
   return (
-    <Box
-      sx={{
-        display: { xs: "none", md: "flex" },
-        flexDirection: "column",
-        py: "20px",
-        maxWidth: "210px",
-        flexShrink: 0,
-      }}
-    >
+    <>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
         <Box
           sx={{
@@ -72,7 +64,7 @@ const Filter: FC<FilterProps> = ({ children, onClick }) => {
         </Box>
         {children}
       </Box>
-    </Box>
+    </>
   );
 };
 
