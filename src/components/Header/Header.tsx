@@ -142,7 +142,7 @@ function Header() {
               onClose={handleCloseUserMenu}
             >
               {!isLogged ? (
-                <>
+                <Box>
                   <MenuItem>
                     <Button
                       component={Link}
@@ -161,9 +161,9 @@ function Header() {
                       Register
                     </Button>
                   </MenuItem>
-                </>
+                </Box>
               ) : (
-                <>
+                <Box>
                   <MenuItem sx={{ p: 0 }}>
                     <Button
                       component={Link}
@@ -223,7 +223,7 @@ function Header() {
                       <Typography textTransform="capitalize">Logout</Typography>
                     </Button>
                   </MenuItem>
-                </>
+                </Box>
               )}
             </Menu>
           </Box>
