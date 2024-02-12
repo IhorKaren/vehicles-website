@@ -20,6 +20,7 @@ import { ToastContainer } from "react-toastify";
 import MembershipChoice from "./components/MembershipChoice/MembershipChoice";
 import { route } from "./constants/route";
 import { RestrictedRoute, PrivateRoute } from "./components/Routes";
+import { VehicleInfo } from "./pages/VehicleInfo/VehicleInfo";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -60,6 +61,8 @@ function App() {
                 <Route path={route.NOTIFICATIONS} element={<Notifications />} />
               </Route>
               <Route path={route.VEHICLES} element={<Vehicles />} />
+              <Route path={`${route.VEHICLES}/:id`} element={<VehicleInfo />} />
+
               <Route path={route.ACCESSORIES} element={<Accessories />} />
               <Route path={route.SELL} element={<Listing />} />
               <Route path={route.MEMBERSHIP} element={<MembershipChoice />} />

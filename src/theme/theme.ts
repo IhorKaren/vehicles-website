@@ -1,8 +1,7 @@
 import { red } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
 import { customColors } from "../constants/customColors";
-
-import { muiAdditionalStyles } from "./muiAdditionalStyles";
+import { breakpointValues } from "./breakpointValues";
 import { muiButtonStyles } from "./muiButtonStyles";
 import { muiOutlinedInputStyles } from "./muiOutlinedInputStyles";
 
@@ -47,9 +46,8 @@ export const theme = createTheme({
     success: {
       main: "#1B7A04",
     },
-
-    ...muiAdditionalStyles,
   },
+  breakpoints: { values: breakpointValues },
   typography: {
     fontFamily: ["Montserrat", "Inter", "sans-serif"].join(","),
   },

@@ -52,7 +52,7 @@ export const MyTabs: React.FC<MyTabsProps> = ({ items, defaultActive }) => {
 
   const handleChange = (
     _event: React.SyntheticEvent,
-    newValue: React.SetStateAction<number>
+    newValue: React.SetStateAction<number>,
   ): void => {
     setValue(newValue);
   };

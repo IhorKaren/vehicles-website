@@ -64,7 +64,7 @@ export type Vehicle = {
   make: string;
   model: string;
   type: string;
-  img: string;
+  img: string[];
   description: string;
   fuelConsumption: string;
   engineSize: string;
@@ -75,6 +75,7 @@ export type Vehicle = {
   address: string;
   rentalConditions: string;
   mileage: number;
+  createdAt: Date;
 };
 
 export type Accessory = {

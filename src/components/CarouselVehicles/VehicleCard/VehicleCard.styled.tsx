@@ -18,6 +18,11 @@ export const VehicleImage = styled("img")(() => ({
   display: "block",
   borderTopLeftRadius: "10px",
   borderTopRightRadius: "10px",
+  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+  transition: "box-shadow 0.3s ease",
+  ":hover": {
+    boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.2)",
+  },
 }));
 
 export const VehiclePrice = styled("h2")(({ theme }) => ({
@@ -74,7 +79,7 @@ export const VehicleDescription = styled("p")(() => ({
   fontFamily: "Inter",
   fontSize: "12px",
   fontWeight: "500",
-  textAlign: "justify",
+  // textAlign: "justify",
   letterSpacing: "-0.5px",
   margin: "-5px 10px 0 10px",
 }));

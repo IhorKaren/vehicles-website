@@ -5,13 +5,12 @@ import { CarouselVehiclesSkeleton } from "../../components/CarouselVehiclesSkele
 import { Hero } from "../../components/Hero";
 import Overview from "../../components/Overview";
 import { route } from "../../constants/route";
-import { carsData } from "../Vehicles/data";
 import { HomeStyled } from "./Home.styled";
 import { accessoriesData } from "../Accessories/data";
 import { CarouselAccessories } from "../../components/CarouselAccessories/CarouselAccessories";
+import { carsData } from "../../components/CarouselVehicles/data";
 
 const HomePage: FC = () => {
-
   const popularVehiclesData = carsData;
   const popularAccessoriesData = accessoriesData;
 
@@ -39,7 +38,9 @@ const HomePage: FC = () => {
           popularAccessoriesIsLoading ? (
             <CarouselAccessoriesSkeleton />
           ) : (
-            <CarouselAccessories popularAccessoriesData={popularAccessoriesData} />
+            <CarouselAccessories
+              popularAccessoriesData={popularAccessoriesData}
+            />
           )
         }
       />
