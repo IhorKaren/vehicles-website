@@ -1,8 +1,6 @@
 import {
   Box,
   Dialog,
-  DialogContent,
-  DialogTitle,
   IconButton,
   Typography,
   useMediaQuery,
