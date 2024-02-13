@@ -29,7 +29,11 @@ const VehicleItem: FC<VehicleItemProps> = ({ item }) => {
 
   return (
     <ListItem sx={{ width: 290, p: 0 }}>
-      <Link to={`${route.VEHICLES}/${id}`}>
+      <Box
+        component={Link}
+        to={`${route.VEHICLES}/${id}`}
+        sx={{ width: "100%" }}
+      >
         <Card sx={{ width: "100%" }}>
           <CardActionArea>
             <Box position="relative">
@@ -65,7 +69,7 @@ const VehicleItem: FC<VehicleItemProps> = ({ item }) => {
             </CardContent>
           </CardActionArea>
         </Card>
-      </Link>
+      </Box>
     </ListItem>
   );
 };
