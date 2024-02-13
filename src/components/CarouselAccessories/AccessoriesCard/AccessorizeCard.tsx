@@ -25,6 +25,8 @@ import {
 } from "../../../components/CarouselVehicles/VehicleCard/mockdata/getFavorite";
 import { StyledItemBadge } from "../CardBadge/CardBadge";
 import { IoCartOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { route } from "../../../constants/route";
 
 type AccessoryCardProps = {
   accessorizeInfo: Accessory;
@@ -131,12 +133,15 @@ export const AccessorizeCard: React.FC<AccessoryCardProps> = ({
   return (
     <AccessoryCardWrapper>
       <AccessoryImageWrapper>
-        <AccessoryImage
-          src={accessorizeInfo.img}
+
+      <Link to={`${route.ACCESSORIES}/${accessorizeInfo.id}`}>
+      <AccessoryImage
+          src={accessorizeInfo.img[0]}
           alt={accessorizeInfo.name}
           width="250"
           height="250"
         />
+        </Link>
 
         <FavoriteButton>
           {userId ? (

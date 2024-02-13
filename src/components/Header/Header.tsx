@@ -20,6 +20,8 @@ import Searchbar from "../Searchbar/Searchbar";
 import Badge from "@mui/material/Badge";
 import { route } from "../../constants/route.js";
 import { navPages, userPages } from "../../constants/navPages";
+import { customColors } from "../../constants/customColors";
+import logosymbol from "../../assets/logosymbol.png";
 
 function Header() {
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -47,8 +49,7 @@ function Header() {
     <AppBar
       position="fixed"
       sx={{
-        background:
-          "linear-gradient(to right, #ce8c13, #d69213, #FFA500, #ce9428, #cc8d19);",
+        background: customColors.linearGradient,
       }}
     >
       <Container maxWidth="lg">
@@ -56,41 +57,11 @@ function Header() {
           disableGutters
           sx={{ display: "flex", gap: { xs: "10px", md: "15px" } }}
         >
-          <Typography
-            variant="h6"
-            noWrap
-            component={Link}
-            to={route.HOME}
-            sx={{
-              display: { xs: "none", md: "flex" },
-              flexShrink: 0,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
+          <Link to={route.HOME}>
+            {" "}
+            <img src={logosymbol} alt="cambizs" width="70px"></img>
+          </Link>
 
-          <Typography
-            variant="h5"
-            noWrap
-            component={Link}
-            to={route.HOME}
-            sx={{
-              display: { xs: "flex", md: "none" },
-              flexShrink: 0,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
           <Box
             sx={{
               width: "100%",

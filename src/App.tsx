@@ -21,6 +21,7 @@ import MembershipChoice from "./components/MembershipChoice/MembershipChoice";
 import { route } from "./constants/route";
 import { RestrictedRoute, PrivateRoute } from "./components/Routes";
 import { VehicleInfo } from "./pages/VehicleInfo/VehicleInfo";
+import { AccessoryInfo } from "./pages/AccessoryInfo/AccessoryInfo";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -62,6 +63,7 @@ function App() {
               </Route>
               <Route path={route.VEHICLES} element={<Vehicles />} />
               <Route path={`${route.VEHICLES}/:id`} element={<VehicleInfo />} />
+              <Route path={`${route.ACCESSORIES}/:id`} element={<AccessoryInfo />} />
 
               <Route path={route.ACCESSORIES} element={<Accessories />} />
               <Route path={route.SELL} element={<Listing />} />
