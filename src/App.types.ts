@@ -84,7 +84,8 @@ export type Accessory = {
   brand: string;
   description: string;
   price: number;
-  img: string;
+  img: string[];
+  createdAt: Date;
 };
 
 export type LoginFormValues = {
